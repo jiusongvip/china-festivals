@@ -1,0 +1,249 @@
+---
+import { festivals, monthGuide } from "../data/festivals";
+
+type Persona = {
+  id: string;
+  label: string;
+  prompt: string;
+  recs: { slug: string; reason: string }[];
+};
+
+const personas: Persona[] = [
+  {
+    id: "first-timer",
+    label: "First-timer",
+    prompt: "Never been to China? Start with these.",
+    recs: [
+      { slug: "mid-autumn-festival", reason: "The best balance of scenery, food, and calm crowds." },
+      { slug: "lantern-festival", reason: "A gentle, glowing intro without the New Year crush." },
+      { slug: "dragon-boat-festival", reason: "Lively races, easy to combine with a city trip." },
+    ],
+  },
+  {
+    id: "food-lover",
+    label: "Food lover",
+    prompt: "You travel to eat. Go where the food is ritual.",
+    recs: [
+      { slug: "dragon-boat-festival", reason: "Dozens of regional zongzi styles in one weekend." },
+      { slug: "mid-autumn-festival", reason: "Mooncakes in every filling imaginable." },
+      { slug: "sisters-meal-festival", reason: "Five-color sticky rice and Miao sour fish soup." },
+    ],
+  },
+  {
+    id: "photographer",
+    label: "Photographer",
+    prompt: "You want the shot nobody else has.",
+    recs: [
+      { slug: "torch-festival", reason: "A mountain of fire under the stars." },
+      { slug: "harbin-ice-festival", reason: "Building-sized ice sculptures in blue light." },
+      { slug: "cherry-blossom-season", reason: "A pink, week-long window in Wuhan and Wuxi." },
+    ],
+  },
+  {
+    id: "party-goer",
+    label: "Party-goer",
+    prompt: "You want the loudest, wettest, brightest time possible.",
+    recs: [
+      { slug: "water-splashing-festival", reason: "A city-wide water fight for three days straight." },
+      { slug: "torch-festival", reason: "Dancing circles around giant flames until midnight." },
+      { slug: "spring-festival", reason: "Fireworks over every city on New Year's Eve." },
+    ],
+  },
+  {
+    id: "culture-seeker",
+    label: "Culture seeker",
+    prompt: "You want ritual, not just spectacle.",
+    recs: [
+      { slug: "shoton-festival", reason: "A giant thangka unveiled at dawn over Lhasa." },
+      { slug: "san-yue-san", reason: "The Zhuang song festival, a living courtship tradition." },
+      { slug: "naadam-festival", reason: "Wrestling, archery, and horse racing on the steppe." },
+    ],
+  },
+  {
+    id: "romantic",
+    label: "Romantic",
+    prompt: "Planning something for two?",
+    recs: [
+      { slug: "qixi-festival", reason: "China's Valentine's Day, told through star-crossed lovers." },
+      { slug: "cherry-blossom-season", reason: "Picnics under pink blossoms." },
+      { slug: "mid-autumn-festival", reason: "Mooncakes and a full moon, made for two." },
+    ],
+  },
+];
+
+function festivalBySlug(slug: string) {
+  return festivals.find((f) => f.slug === slug);
+}
+
+const MONTHS_SHORT = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const months = MONTHS_SHORT
+  .map((short, i) => {
+    const month = i + 1;
+    const items = festivals
+      .filter((f) => f.month === month)
+      .sort((a, b) => a.name.localeCompare(b.name));
+    return { month, short, items, info: monthGuide[month] };
+  })
+  .filter((m) => m.items.length > 0);
+---
+
+<section id="finder" class="border-t border-hairline">
+  <div class="container-px section-pad">
+    <div class="max-w-[60ch]">
+      <h2 class="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        Festival Finder
+      </h2>
+      <p class="mt-3 text-ink-soft leading-relaxed">
+        Pick the traveller you are, or the month you are free, and get festivals matched
+        to you with dates and where to go.
+      </p>
+    </div>
+
+    <!-- persona selector -->
+    <div class="mt-8 flex flex-wrap gap-2" role="tablist" aria-label="Traveller type">
+      {personas.map((p, i) => (
+        <button
+          type="button"
+          data-persona={p.id}
+          role="tab"
+          aria-selected={i === 0 ? "true" : "false"}
+          class:list={[
+            "rounded-full border px-4 py-2 text-sm font-medium transition-colors duration-200",
+            i === 0
+              ? "border-vermilion bg-vermilion text-white"
+              : "border-hairline bg-paper text-ink-soft hover:border-vermilion hover:text-vermilion",
+          ]}
+        >
+          {p.label}
+        </button>
+      ))}
+    </div>
+
+    <!-- persona result panels -->
+    <div class="mt-8">
+      {personas.map((p, i) => (
+        <div
+          data-persona-panel={p.id}
+          class:list={["grid gap-4 lg:grid-cols-3", i !== 0 && "hidden"]}
+          role="tabpanel"
+        >
+          {p.recs.map((r) => {
+            const f = festivalBySlug(r.slug);
+            if (!f) return null;
+            return (
+              <a
+                href={`#${f.slug}`}
+                class="group flex flex-col rounded-field border border-hairline bg-white/60 p-6 transition-colors duration-200 hover:border-vermilion"
+              >
+                <p class="text-xs font-semibold uppercase tracking-[0.12em] text-vermilion">
+                  {f.date2026}
+                </p>
+                <p class="mt-2 font-display text-2xl font-semibold leading-tight text-ink group-hover:text-vermilion">
+                  {f.name}
+                </p>
+                <p class="mt-2 text-sm leading-relaxed text-ink-soft">{r.reason}</p>
+                <p class="mt-4 text-sm font-medium text-ink">
+                  {f.bestCities[0]?.name}
+                  <span class="text-ink-soft"> · {f.nameZh}</span>
+                </p>
+              </a>
+            );
+          })}
+        </div>
+      ))}
+    </div>
+
+    <!-- month selector -->
+    <div class="mt-12">
+      <p class="text-xs font-semibold uppercase tracking-[0.12em] text-ink-soft">
+        Or pick a month
+      </p>
+      <div class="mt-3 flex flex-wrap gap-2" role="tablist" aria-label="Month">
+        {months.map((m) => (
+          <button
+            type="button"
+            data-month={m.month}
+            role="tab"
+            aria-selected="false"
+            class="rounded-full border border-hairline bg-paper px-4 py-2 text-sm font-medium text-ink-soft transition-colors duration-200 hover:border-vermilion hover:text-vermilion"
+          >
+            {m.short}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- month result panels -->
+    <div class="mt-6">
+      {months.map((m) => (
+        <div data-month-panel={m.month} class="hidden" role="tabpanel">
+          <div class="rounded-field border border-hairline bg-white/60 p-5">
+            <div class="flex flex-wrap gap-x-6 gap-y-1 text-sm text-ink-soft">
+              <span>Weather: <span class="text-ink">{m.info.weather}</span></span>
+              <span>Crowds: <span class="text-ink">{m.info.crowd}</span></span>
+              <span>Verdict: <span class="font-medium text-vermilion">{m.info.verdict}</span></span>
+            </div>
+          </div>
+          <div class="mt-4 grid gap-3 md:grid-cols-2">
+            {m.items.map((f) => (
+              <a
+                href={`#${f.slug}`}
+                class="group flex flex-col rounded-field border border-hairline bg-white/60 p-5 transition-colors duration-200 hover:border-vermilion"
+              >
+                <div class="flex items-baseline justify-between gap-2">
+                  <p class="font-display text-lg font-semibold text-ink group-hover:text-vermilion">
+                    {f.name}
+                  </p>
+                  <span class="shrink-0 text-xs font-semibold uppercase tracking-[0.1em] text-vermilion">
+                    {f.date2026}
+                  </span>
+                </div>
+                <p class="mt-1.5 text-sm leading-relaxed text-ink-soft">{f.tagline}</p>
+                <p class="mt-2 text-sm font-medium text-ink">
+                  {f.bestCities[0]?.name}
+                  <span class="text-ink-soft"> · {f.nameZh}</span>
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const personaButtons = document.querySelectorAll<HTMLButtonElement>("[data-persona]");
+  const personaPanels = document.querySelectorAll<HTMLElement>("[data-persona-panel]");
+  const monthButtons = document.querySelectorAll<HTMLButtonElement>("[data-month]");
+  const monthPanels = document.querySelectorAll<HTMLElement>("[data-month-panel]");
+
+  const chipBase = "rounded-full border px-4 py-2 text-sm font-medium transition-colors duration-200";
+  const activeChip = "border-vermilion bg-vermilion text-white";
+  const idleChip = "border-hairline bg-paper text-ink-soft hover:border-vermilion hover:text-vermilion";
+
+  const setChip = (button: HTMLButtonElement, active: boolean) => {
+    button.className = `${chipBase} ${active ? activeChip : idleChip}`;
+    button.setAttribute("aria-selected", String(active));
+  };
+
+  personaButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.persona;
+      personaButtons.forEach((b) => setChip(b, b.dataset.persona === id));
+      personaPanels.forEach((p) => p.classList.toggle("hidden", p.dataset.personaPanel !== id));
+      monthButtons.forEach((b) => setChip(b, false));
+      monthPanels.forEach((p) => p.classList.add("hidden"));
+    });
+  });
+
+  monthButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const m = btn.dataset.month;
+      monthButtons.forEach((b) => setChip(b, b.dataset.month === m));
+      monthPanels.forEach((p) => p.classList.toggle("hidden", p.dataset.monthPanel !== m));
+      personaButtons.forEach((b) => setChip(b, false));
+      personaPanels.forEach((p) => p.classList.add("hidden"));
+    });
+  });
+</script>

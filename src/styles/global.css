@@ -1,0 +1,89 @@
+@import "@fontsource/cormorant-garamond/500.css";
+@import "@fontsource/cormorant-garamond/600.css";
+@import "@fontsource/cormorant-garamond/700.css";
+@import "@fontsource/outfit/400.css";
+@import "@fontsource/outfit/500.css";
+@import "@fontsource/outfit/600.css";
+@import "tailwindcss";
+
+@theme {
+  /* palette - modern Oriental editorial */
+  --color-paper: #fbf9f6;
+  --color-paper-deep: #f4f0ea;
+  --color-ink: #201e1c;
+  --color-ink-soft: #55504a;
+  --color-vermilion: #c13b2e;
+  --color-vermilion-dark: #a32e24;
+  --color-vermilion-soft: #f6e3e0;
+  --color-hairline: #e8e2da;
+
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Outfit", system-ui, -apple-system, sans-serif;
+
+  --radius-field: 12px;
+  --radius-pill: 999px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-vermilion);
+    color: #fff;
+  }
+
+  /* display headings */
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-[1200px] px-5 sm:px-8;
+  }
+
+  .section-pad {
+    @apply py-16 sm:py-24;
+  }
+
+  /* anchor nav pill */
+  .nav-pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-hairline bg-paper px-3.5 py-1.5 text-sm font-medium text-ink-soft transition-colors duration-200 hover:border-vermilion hover:text-vermilion;
+  }
+
+  /* primary CTA */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-vermilion px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-vermilion-dark active:translate-y-[1px];
+  }
+
+  /* secondary CTA */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-transparent px-6 py-3 text-sm font-semibold text-ink transition-all duration-200 hover:border-ink active:translate-y-[1px];
+  }
+
+  /* festival detail card */
+  .fest-card {
+    @apply rounded-field border border-hairline bg-white/60;
+  }
+}
+
+@layer utilities {
+  /* reveal-on-scroll base (motion handles the rest) */
+  .tint-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.4));
+  }
+}

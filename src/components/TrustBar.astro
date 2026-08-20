@@ -1,0 +1,21 @@
+---
+const trustPoints = [
+  { label: "Independent recommendations" },
+  { label: "No sponsored placements" },
+  { label: "Dates refreshed every year" },
+  { label: "Written from on-the-ground visits" },
+];
+---
+
+<section class="border-b border-hairline bg-paper">
+  <div class="container-px flex flex-wrap items-center gap-x-8 gap-y-2 py-4">
+    {trustPoints.map((t) => (
+      <span class="inline-flex items-center gap-2 text-sm text-ink-soft">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-vermilion">
+          <path d="M20 6L9 17l-5-5"></path>
+        </svg>
+        {t.label}
+      </span>
+    ))}
+  </div>
+</section>

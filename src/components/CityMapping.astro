@@ -1,0 +1,126 @@
+---
+type City = {
+  name: string;
+  festival: string;
+  festivalSlug: string;
+  note: string;
+  url?: string;
+  image?: string;
+};
+
+const cities: City[] = [
+  {
+    name: "Xishuangbanna",
+    festival: "Water Splashing Festival",
+    festivalSlug: "water-splashing-festival",
+    note: "The heart of the Dai New Year water fight.",
+    url: "https://www.yunnan-province.com/",
+    image: "/images/xishuangbanna-water-festival.webp",
+  },
+  {
+    name: "Nanning",
+    festival: "San Yue San song festival",
+    festivalSlug: "san-yue-san",
+    note: "The Zhuang song festival, a public holiday across Guangxi.",
+    url: "https://www.guangxi-province.com/",
+    image: "/images/nanning-san-yue-san.webp",
+  },
+  {
+    name: "Lhasa",
+    festival: "Shoton Festival thangka",
+    festivalSlug: "shoton-festival",
+    note: "A giant thangka unrolled at dawn at Drepung Monastery.",
+    url: "https://www.tibet-lhasa-potala.com/",
+    image: "/images/lhasa-thangka.webp",
+  },
+  {
+    name: "Harbin",
+    festival: "Ice & Snow Festival",
+    festivalSlug: "harbin-ice-festival",
+    note: "A city-sized castle of ice and light, January into February.",
+  },
+  {
+    name: "Xi'an",
+    festival: "City-wall Lantern Festival",
+    festivalSlug: "spring-festival",
+    note: "Red lanterns on the ancient wall for Spring Festival.",
+  },
+  {
+    name: "Beijing",
+    festival: "Spring Festival temple fairs",
+    festivalSlug: "spring-festival",
+    note: "Folk shows and street snacks at Ditan and Longtan.",
+  },
+  {
+    name: "Shanghai",
+    festival: "Yuyuan Garden lantern fair",
+    festivalSlug: "lantern-festival",
+    note: "Handcrafted lanterns and riddle games after dark.",
+  },
+  {
+    name: "Hohhot",
+    festival: "Naadam Festival",
+    festivalSlug: "naadam-festival",
+    note: "Wrestling, archery, and horse racing on the steppe.",
+  },
+  {
+    name: "Luoyang",
+    festival: "Peony Festival",
+    festivalSlug: "peony-festival",
+    note: "A thousand-year-old flower show in an ancient capital.",
+  },
+];
+---
+
+<section id="cities" class="border-t border-hairline">
+  <div class="container-px section-pad">
+    <div class="max-w-[60ch]">
+      <h2 class="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        Where to experience each festival
+      </h2>
+      <p class="mt-3 text-ink-soft leading-relaxed">
+        Most festivals are best in one specific place. These are the pairings worth
+        booking a trip around.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {cities.map((c) => (
+        <a
+          href={c.url ?? `#${c.festivalSlug}`}
+          target={c.url ? "_blank" : undefined}
+          rel={c.url ? "noopener" : undefined}
+          class="group relative flex min-h-[280px] flex-col justify-end overflow-hidden rounded-field"
+        >
+          {c.image ? (
+            <img
+              src={c.image}
+              alt={`${c.name} during ${c.festival}`}
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              width="800"
+              height="560"
+              loading="lazy"
+            />
+          ) : (
+            <>
+              <div class="absolute inset-0 bg-ink"></div>
+              <div class="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-vermilion/25"></div>
+            </>
+          )}
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
+          <div class="relative p-6 text-paper">
+            <p class="font-display text-2xl font-semibold leading-tight">{c.name}</p>
+            <p class="mt-1 text-sm font-medium text-paper/90">{c.festival}</p>
+            <p class="mt-2 text-sm leading-relaxed text-paper/70">{c.note}</p>
+            <span class="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-paper">
+              Visit the guide
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 17L17 7M9 7h8v8"></path>
+              </svg>
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

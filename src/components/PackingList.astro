@@ -1,0 +1,77 @@
+---
+const packingLists = [
+  {
+    slug: "water-splashing-festival",
+    name: "Water Splashing Festival",
+    intro: "You will be soaked all day. Waterproof everything and dress to dry fast.",
+    items: [
+      "Waterproof phone pouch",
+      "Quick-dry clothes",
+      "Dry bag for valuables",
+      "Water shoes or secure sandals",
+      "Sunscreen, it is hot and wet",
+      "A spare set of clothes",
+    ],
+  },
+  {
+    slug: "harbin-ice-festival",
+    name: "Harbin Ice Festival",
+    intro: "It drops below -20°C. Layers beat one thick coat, and warm up indoors hourly.",
+    items: [
+      "Thermal base layers",
+      "A down jacket",
+      "Insulated waterproof boots",
+      "Hat, gloves, and a face covering",
+      "Hand warmers",
+      "Lip balm and moisturiser",
+    ],
+  },
+  {
+    slug: "spring-festival",
+    name: "Spring Festival",
+    intro: "Cold in the north, and transport sells out. Pack for weather and book early.",
+    items: [
+      "Warm layers for the north",
+      "Red clothing, welcome but never required",
+      "Cash and red envelopes for hongbao",
+      "Trains, flights, and dinners booked ahead",
+      "A power bank for long temple-fair days",
+    ],
+  },
+];
+---
+
+<section id="packing" class="border-t border-hairline bg-paper-deep/40">
+  <div class="container-px section-pad">
+    <div class="max-w-[60ch]">
+      <h2 class="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        What to pack for the big three
+      </h2>
+      <p class="mt-3 text-ink-soft leading-relaxed">
+        The three festivals that catch first-timers out, and exactly what to bring.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-4 lg:grid-cols-3">
+      {packingLists.map((p) => (
+        <div class="flex flex-col rounded-field border border-hairline bg-white/60 p-6">
+          <div class="flex items-baseline justify-between gap-2">
+            <p class="font-display text-2xl font-semibold text-ink">{p.name}</p>
+            <a href={`#${p.slug}`} class="shrink-0 text-sm font-medium text-vermilion hover:underline">
+              Guide
+            </a>
+          </div>
+          <p class="mt-2 text-sm leading-relaxed text-ink-soft">{p.intro}</p>
+          <ul class="mt-4 space-y-2 border-t border-hairline pt-4">
+            {p.items.map((item) => (
+              <li class="flex gap-2 text-sm leading-relaxed text-ink">
+                <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-vermilion"></span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

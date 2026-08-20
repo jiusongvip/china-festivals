@@ -1,0 +1,34 @@
+---
+import { categoryMeta, festivalsByCategory } from "../data/festivals";
+---
+
+<section class="border-t border-hairline">
+  <div class="container-px section-pad">
+    <h2 class="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+      Four ways to read China's festivals
+    </h2>
+
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        categoryMeta.map((c) => {
+          const count = festivalsByCategory(c.key).length;
+          return (
+            <a
+              href={`#cat-${c.key}`}
+              class="group flex flex-col rounded-field border border-hairline bg-white/60 p-6 transition-colors duration-200 hover:border-vermilion"
+            >
+              <span class="text-xs font-semibold uppercase tracking-[0.12em] text-vermilion">
+                {c.nameZh}
+              </span>
+              <span class="mt-2 font-display text-2xl font-semibold leading-tight text-ink group-hover:text-vermilion">
+                {c.label}
+              </span>
+              <span class="mt-2 text-sm leading-relaxed text-ink-soft">{c.description}</span>
+              <span class="mt-4 text-sm font-medium text-ink">{count} festivals</span>
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

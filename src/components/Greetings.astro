@@ -1,0 +1,72 @@
+---
+const greetings = [
+  { zh: "新年快乐", pinyin: "Xīnnián kuàilè", en: "Happy New Year", when: "Spring Festival" },
+  { zh: "恭喜发财", pinyin: "Gōngxǐ fācái", en: "Wishing you prosperity", when: "Spring Festival" },
+  { zh: "元宵节快乐", pinyin: "Yuánxiāojié kuàilè", en: "Happy Lantern Festival", when: "Lantern Festival" },
+  { zh: "端午安康", pinyin: "Duānwǔ ānkāng", en: "Wishing you Dragon Boat well-being", when: "Dragon Boat" },
+  { zh: "中秋快乐", pinyin: "Zhōngqiū kuàilè", en: "Happy Mid-Autumn", when: "Mid-Autumn" },
+  { zh: "国庆快乐", pinyin: "Guóqìng kuàilè", en: "Happy National Day", when: "National Day" },
+  { zh: "万事如意", pinyin: "Wànshì rúyì", en: "May everything go as you wish", when: "any festival" },
+  { zh: "谢谢", pinyin: "Xièxie", en: "Thank you", when: "anytime" },
+];
+---
+
+<section id="greetings" class="border-t border-hairline bg-paper-deep/40">
+  <div class="container-px section-pad">
+    <h2 class="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+      Say it in Chinese
+    </h2>
+    <p class="mt-3 max-w-[60ch] text-ink-soft leading-relaxed">
+      A few phrases worth knowing if you are celebrating alongside locals. The tone marks
+      are there to help you say them right.
+    </p>
+
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {greetings.map((g) => (
+        <div class="rounded-field border border-hairline bg-white/60 p-6">
+          <div class="flex items-start justify-between gap-3">
+            <p class="text-2xl font-semibold leading-tight text-ink">{g.zh}</p>
+            <button
+              type="button"
+              data-speak={g.zh}
+              aria-label={`Play pronunciation of ${g.zh}`}
+              title="Play pronunciation"
+              class="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-hairline text-vermilion transition-colors hover:bg-vermilion hover:text-white"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                <path d="M15.5 8.5a5 5 0 010 7"></path>
+                <path d="M19 5a9 9 0 010 14"></path>
+              </svg>
+            </button>
+          </div>
+          <p class="mt-2 font-mono text-sm text-vermilion">{g.pinyin}</p>
+          <p class="mt-2 text-sm leading-relaxed text-ink-soft">{g.en}</p>
+          <p class="mt-3 text-xs font-medium uppercase tracking-[0.1em] text-ink-soft/70">{g.when}</p>
+        </div>
+      ))}
+    </div>
+    <p class="mt-4 text-xs text-ink-soft">Tap the speaker icon to hear each phrase in Mandarin.</p>
+  </div>
+</section>
+
+<script>
+  const speakButtons = document.querySelectorAll<HTMLButtonElement>("[data-speak]");
+
+  speakButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const text = btn.dataset.speak;
+      if (!text || !("speechSynthesis" in window)) return;
+
+      const voices = window.speechSynthesis.getVoices();
+      const zhVoice = voices.find((v) => v.lang.toLowerCase().startsWith("zh"));
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "zh-CN";
+      if (zhVoice) utterance.voice = zhVoice;
+      utterance.rate = 0.85;
+
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(utterance);
+    });
+  });
+</script>

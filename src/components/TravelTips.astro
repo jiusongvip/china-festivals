@@ -1,0 +1,62 @@
+---
+const essentials = [
+  {
+    title: "What to wear and pack",
+    body: "Winter festivals like Harbin's ice festival drop below -20°C, so bring thermal layers, a down jacket, insulated boots, and a hat and gloves. For the Water Splashing Festival, wear quick-dry clothes and carry a waterproof phone pouch and dry bag. Spring and autumn festivals need layers and a light rain jacket. Red is welcome at any festival but never required.",
+  },
+  {
+    title: "What to eat",
+    body: "Every festival has a signature dish: dumplings at Spring Festival, tangyuan at Lantern, zongzi at Dragon Boat, mooncakes at Mid-Autumn, and five-color rice at San Yue San. Eat it where locals eat it, at street stalls and small family restaurants rather than tourist spots. Festival foods are often glutinous and filling, so order small portions and try a few kinds.",
+  },
+  {
+    title: "Where to stay",
+    body: "Book months ahead for Spring Festival and Golden Week, when hotels double or triple in price. For festival cities like Xishuangbanna and Harbin, stay near the event site, you will thank yourself after dark when the crowd thins. Mid-range hotels and guesthouses offer the best value, and many fill up weeks before the festival.",
+  },
+  {
+    title: "Getting around",
+    body: "High-speed rail connects most festival cities, and it is usually faster and more reliable than flying for short hops. Domestic train tickets open about 15 days before travel and sell out fast over holidays, so book the moment they go on sale. Over New Year's Eve and the first days of Spring Festival, transport is at its hardest, so stay put in one city rather than trying to tour.",
+  },
+];
+
+const pitfalls = [
+  { title: "Crowds", body: "Spring Festival and Golden Week move hundreds of millions of people at once. If you dislike queues, choose Mid-Autumn or an ethnic festival instead." },
+  { title: "Prices", body: "Flights and hotels double or triple over major holidays. Travel on shoulder dates within the holiday window to blunt the cost." },
+  { title: "Closures", body: "Over New Year, many family restaurants and small shops close for several days. Plan dinners in advance and expect a quieter city." },
+  { title: "Transport", body: "New Year's Eve and the first days of Spring Festival are the hardest to move around. Stay put in one city rather than trying to tour." },
+];
+---
+
+<section id="tips" class="border-t border-hairline">
+  <div class="container-px section-pad">
+    <h2 class="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+      The practical side
+    </h2>
+    <p class="mt-3 max-w-[60ch] text-ink-soft leading-relaxed">
+      What to pack, what to eat, where to stay, and how to get around, plus the four
+      things that catch first-timers out.
+    </p>
+
+    <div class="mt-10 grid gap-4 sm:grid-cols-2">
+      {essentials.map((e) => (
+        <div class="rounded-field border border-hairline bg-white/60 p-6">
+          <p class="font-display text-xl font-semibold text-ink">{e.title}</p>
+          <p class="mt-2 text-sm leading-relaxed text-ink-soft">{e.body}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12">
+      <h3 class="font-display text-2xl font-semibold tracking-tight text-ink">
+        The four things that catch people out
+      </h3>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {pitfalls.map((p) => (
+          <div class="rounded-field border border-vermilion/15 bg-vermilion-soft p-6">
+            <p class="font-display text-lg font-semibold text-vermilion-dark">{p.title}</p>
+            <p class="mt-2 text-sm leading-relaxed text-ink">{p.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

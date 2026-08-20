@@ -1,0 +1,281 @@
+---
+import { categoryMeta, festivals } from "../data/festivals";
+import { getGuide } from "../data/festivalGuides";
+
+const crowdLabel = {
+  low: "Low crowds",
+  medium: "Moderate crowds",
+  high: "Very crowded",
+};
+
+const crowdColor = {
+  low: "text-emerald-700",
+  medium: "text-amber-700",
+  high: "text-vermilion",
+};
+---
+
+<section id="festivals" class="border-t border-hairline bg-paper-deep/40">
+  <div class="container-px section-pad">
+    <h2 class="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+      All 22 Chinese festivals, explained
+    </h2>
+    <p class="mt-3 max-w-[60ch] text-ink-soft leading-relaxed">
+      Tap any festival for its history, food, where to go, and the one thing to watch
+      out for.
+    </p>
+
+    <div class="mt-12 space-y-14">
+      {
+        categoryMeta.map((cat) => {
+          const items = festivals.filter((f) => f.category === cat.key);
+          return (
+            <div id={`cat-${cat.key}`} class="scroll-mt-24">
+              <div class="mb-5 flex items-baseline gap-3">
+                <h3 class="font-display text-2xl font-semibold tracking-tight text-ink">
+                  {cat.label}
+                </h3>
+                <span class="text-sm text-ink-soft">{cat.nameZh}</span>
+              </div>
+
+              <div class="space-y-3">
+                {items.map((f) => {
+                  const guide = getGuide(f.slug);
+                  return (
+                    <details id={f.slug} class="fest-card group scroll-mt-24">
+                      <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-5 sm:p-6 [&::-webkit-details-marker]:hidden">
+                        <div class="min-w-0">
+                          <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+                            <span class="font-display text-xl font-semibold text-ink group-open:text-vermilion sm:text-2xl">
+                              {f.name}
+                            </span>
+                            <span class="text-sm text-ink-soft">{f.nameZh}</span>
+                          </div>
+                          <div class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-soft">
+                            <span class="font-medium text-vermilion">{f.date2026}</span>
+                            {f.lunarDate && <span>{f.lunarDate}</span>}
+                            <span class:list={["font-medium", crowdColor[f.crowd]]}>
+                              {crowdLabel[f.crowd]}
+                            </span>
+                          </div>
+                        </div>
+                        <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-hairline text-ink transition-transform duration-200 group-open:rotate-45">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                            <path d="M12 5v14M5 12h14"></path>
+                          </svg>
+                        </span>
+                      </summary>
+
+                      {guide ? (
+                        <div class="border-t border-hairline px-5 pb-6 pt-5 sm:px-6">
+                          <p class="font-display text-xl italic leading-snug text-ink">{f.tagline}</p>
+                          <p class="mt-3 max-w-[68ch] leading-relaxed text-ink-soft">{guide.intro}</p>
+
+                          <h4 class="mt-8 font-display text-xl font-semibold text-ink">
+                            The story behind it
+                          </h4>
+                          <div class="mt-3 space-y-3">
+                            {guide.history.map((p) => (
+                              <p class="max-w-[68ch] leading-relaxed text-ink-soft">{p}</p>
+                            ))}
+                          </div>
+
+                          <div class="mt-8 grid gap-6 sm:grid-cols-2">
+                            <div>
+                              <h4 class="font-display text-lg font-semibold text-ink">What you eat</h4>
+                              <div class="mt-3 space-y-3">
+                                {guide.foods.map((food) => (
+                                  <div class="border-t border-hairline pt-3">
+                                    <p class="font-medium text-ink">{food.name}</p>
+                                    <p class="mt-1 text-sm leading-relaxed text-ink-soft">{food.desc}</p>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                            <div>
+                              <h4 class="font-display text-lg font-semibold text-ink">What you see and do</h4>
+                              <div class="mt-3 space-y-3">
+                                {guide.activities.map((a) => (
+                                  <div class="border-t border-hairline pt-3">
+                                    <p class="font-medium text-ink">{a.name}</p>
+                                    <p class="mt-1 text-sm leading-relaxed text-ink-soft">{a.desc}</p>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+
+                          <h4 class="mt-8 font-display text-lg font-semibold text-ink">Where to go</h4>
+                          <div class="mt-3 flex flex-wrap gap-2">
+                            {guide.cities.map((c) => (
+                              c.url ? (
+                                <a
+                                  href={c.url}
+                                  target="_blank"
+                                  rel="noopener"
+                                  class="rounded-full border border-hairline bg-paper px-3.5 py-1.5 text-sm font-medium text-ink transition-colors hover:border-vermilion hover:text-vermilion"
+                                >
+                                  {c.name}
+                                  <span class="text-ink-soft"> · {c.note}</span>
+                                </a>
+                              ) : (
+                                <span class="rounded-full border border-hairline bg-paper px-3.5 py-1.5 text-sm font-medium text-ink">
+                                  {c.name}
+                                  <span class="text-ink-soft"> · {c.note}</span>
+                                </span>
+                              )
+                            ))}
+                          </div>
+
+                          <h4 class="mt-8 font-display text-lg font-semibold text-ink">
+                            {guide.itinerary.title}
+                            <span class="ml-2 text-sm font-normal text-vermilion">{guide.itinerary.days}</span>
+                          </h4>
+                          <ol class="mt-3 space-y-2">
+                            {guide.itinerary.steps.map((step, i) => (
+                              <li class="flex gap-3 text-sm leading-relaxed text-ink">
+                                <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-vermilion-soft text-xs font-semibold text-vermilion-dark">
+                                  {i + 1}
+                                </span>
+                                {step}
+                              </li>
+                            ))}
+                          </ol>
+
+                          <h4 class="mt-8 font-display text-lg font-semibold text-ink">Watch out for</h4>
+                          <div class="mt-3 grid gap-3 sm:grid-cols-2">
+                            {guide.tips.map((t) => (
+                              <div class="rounded-field border border-vermilion/20 bg-vermilion-soft px-4 py-3">
+                                <p class="text-sm leading-relaxed text-ink">{t}</p>
+                              </div>
+                            ))}
+                          </div>
+
+                          <h4 class="mt-8 font-display text-lg font-semibold text-ink">Quick answers</h4>
+                          <div class="mt-3 space-y-2">
+                            {guide.faq.map((item) => (
+                              <details class="group/faq rounded-field border border-hairline bg-paper">
+                                <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-3 [&::-webkit-details-marker]:hidden">
+                                  <span class="text-sm font-medium text-ink">{item.q}</span>
+                                  <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full border border-hairline text-ink transition-transform duration-200 group-open/faq:rotate-45">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                                      <path d="M12 5v14M5 12h14"></path>
+                                    </svg>
+                                  </span>
+                                </summary>
+                                <p class="border-t border-hairline px-4 pb-3.5 pt-3 text-sm leading-relaxed text-ink-soft">
+                                  {item.a}
+                                </p>
+                              </details>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        <div class="border-t border-hairline px-5 pb-6 pt-5 sm:px-6">
+                          <p class="font-display text-xl italic leading-snug text-ink">{f.tagline}</p>
+                          <p class="mt-3 max-w-[68ch] leading-relaxed text-ink-soft">{f.significance}</p>
+
+                          <div class="mt-6 grid gap-6 sm:grid-cols-2">
+                            <div>
+                              <p class="text-xs font-semibold uppercase tracking-[0.12em] text-ink-soft">
+                                What you eat
+                              </p>
+                              <ul class="mt-2 space-y-1.5">
+                                {f.foods.map((food) => (
+                                  <li class="flex gap-2 text-sm leading-relaxed text-ink">
+                                    <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-vermilion"></span>
+                                    {food}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                            <div>
+                              <p class="text-xs font-semibold uppercase tracking-[0.12em] text-ink-soft">
+                                What you see
+                              </p>
+                              <ul class="mt-2 space-y-1.5">
+                                {f.highlights.map((h) => (
+                                  <li class="flex gap-2 text-sm leading-relaxed text-ink">
+                                    <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-vermilion"></span>
+                                    {h}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+
+                          <div class="mt-6">
+                            <p class="text-xs font-semibold uppercase tracking-[0.12em] text-ink-soft">
+                              Best places to experience it
+                            </p>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                              {f.bestCities.map((c) => (
+                                c.url ? (
+                                  <a
+                                    href={c.url}
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="rounded-full border border-hairline bg-paper px-3.5 py-1.5 text-sm font-medium text-ink transition-colors hover:border-vermilion hover:text-vermilion"
+                                  >
+                                    {c.name}
+                                    <span class="text-ink-soft"> · {c.note}</span>
+                                  </a>
+                                ) : (
+                                  <span class="rounded-full border border-hairline bg-paper px-3.5 py-1.5 text-sm font-medium text-ink">
+                                    {c.name}
+                                    <span class="text-ink-soft"> · {c.note}</span>
+                                  </span>
+                                )
+                              ))}
+                            </div>
+                          </div>
+
+                          <div class="mt-6 rounded-field border border-vermilion/20 bg-vermilion-soft px-5 py-4">
+                            <p class="text-xs font-semibold uppercase tracking-[0.12em] text-vermilion-dark">
+                              Watch out for
+                            </p>
+                            <p class="mt-1 text-sm leading-relaxed text-ink">{f.tip}</p>
+                          </div>
+                        </div>
+                      )}
+                    </details>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  const openDetails = (target: string) => {
+    try {
+      const el = document.querySelector(target);
+      if (el && el.tagName === "DETAILS") {
+        (el as HTMLDetailsElement).open = true;
+      }
+    } catch {
+      // invalid selector, ignore
+    }
+  };
+
+  const fromHash = () => {
+    if (window.location.hash) openDetails(window.location.hash);
+  };
+
+  window.addEventListener("hashchange", fromHash);
+  fromHash();
+
+  document.addEventListener("click", (e) => {
+    const anchor = (e.target as Element | null)?.closest?.('a[href^="#"]');
+    if (anchor) {
+      const href = anchor.getAttribute("href");
+      if (href && href.startsWith("#") && href.length > 1) {
+        window.setTimeout(() => openDetails(href), 0);
+      }
+    }
+  });
+</script>

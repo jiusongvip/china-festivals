@@ -1,0 +1,73 @@
+---
+const footerLinks = [
+  { href: "#finder", label: "Festival Finder" },
+  { href: "#calendar", label: "2026 Calendar" },
+  { href: "#festivals", label: "Festivals" },
+  { href: "#cities", label: "Where to Go" },
+  { href: "#tips", label: "Travel Tips" },
+  { href: "#faq", label: "FAQ" },
+  { href: "#privacy", label: "Privacy & Contact" },
+];
+
+const networkLinks = [
+  { href: "https://www.yunnan-province.com/", label: "Yunnan" },
+  { href: "https://www.guangxi-province.com/", label: "Guangxi" },
+  { href: "https://www.tibet-lhasa-potala.com/", label: "Tibet" },
+  { href: "https://www.xi-an-china.com/", label: "Xi'an" },
+  { href: "https://www.china-attractions-in-beijing.com/", label: "Beijing" },
+];
+---
+
+<footer class="border-t border-hairline bg-ink text-paper">
+  <div class="container-px py-14">
+    <div class="grid gap-10 md:grid-cols-3">
+      <div>
+        <a href="/" class="flex items-center gap-2.5">
+          <span class="grid h-8 w-8 place-items-center rounded-full bg-vermilion">
+            <span class="h-3.5 w-3.5 rounded-full border-2 border-paper"></span>
+          </span>
+          <span class="font-display text-xl font-semibold leading-none">China Festivals</span>
+        </a>
+        <p class="mt-4 max-w-[40ch] text-sm leading-relaxed text-paper/70">
+          A decision guide to China's festivals, with dates, foods, and city-by-city
+          advice for travellers.
+        </p>
+      </div>
+
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.12em] text-paper/60">On this page</p>
+        <ul class="mt-4 space-y-2.5">
+          {footerLinks.map((l) => (
+            <li>
+              <a href={l.href} class="text-sm text-paper/80 transition-colors hover:text-paper">
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.12em] text-paper/60">Our city guides</p>
+        <ul class="mt-4 space-y-2.5">
+          {networkLinks.map((l) => (
+            <li>
+              <a href={l.href} target="_blank" rel="noopener" class="text-sm text-paper/80 transition-colors hover:text-paper">
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-col gap-3 border-t border-paper/10 pt-6 text-sm text-paper/50 sm:flex-row sm:items-center sm:justify-between">
+      <p>Festival dates shift year to year. Confirm before you book.</p>
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+        <a href="mailto:hello@china-festivals.com" class="transition-colors hover:text-paper">Contact</a>
+        <a href="#privacy" class="transition-colors hover:text-paper">Privacy</a>
+        <p>© 2026 China Festivals</p>
+      </div>
+    </div>
+  </div>
+</footer>

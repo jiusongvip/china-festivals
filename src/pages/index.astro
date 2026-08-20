@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import TrustBar from "../components/TrustBar.astro";
+import QuickAnswer from "../components/QuickAnswer.astro";
+import FestivalFinder from "../components/FestivalFinder.astro";
+import FestivalCalendar from "../components/FestivalCalendar.astro";
+import AtAGlance from "../components/AtAGlance.astro";
+import CategoryMatrix from "../components/CategoryMatrix.astro";
+import FestivalCards from "../components/FestivalCards.astro";
+import CityMapping from "../components/CityMapping.astro";
+import Itineraries from "../components/Itineraries.astro";
+import FestivalCombos from "../components/FestivalCombos.astro";
+import ComparisonGuide from "../components/ComparisonGuide.astro";
+import Greetings from "../components/Greetings.astro";
+import TravelTips from "../components/TravelTips.astro";
+import PackingList from "../components/PackingList.astro";
+import BudgetGuide from "../components/BudgetGuide.astro";
+import VisaInfo from "../components/VisaInfo.astro";
+import WhyTrust from "../components/WhyTrust.astro";
+import Faq from "../components/Faq.astro";
+import Privacy from "../components/Privacy.astro";
+import Footer from "../components/Footer.astro";
+import { festivals } from "../data/festivals";
+import {
+  buildWebSiteSchema,
+  buildArticleSchema,
+  buildOrganizationSchema,
+  buildFaqSchema,
+  buildItemListSchema,
+  buildEventsSchema,
+  buildBreadcrumbSchema,
+  buildHowToSchema,
+} from "../utils/schema";
+
+const schemas = [
+  buildWebSiteSchema(),
+  buildArticleSchema(),
+  buildOrganizationSchema(),
+  buildFaqSchema(),
+  buildItemListSchema(festivals),
+  buildEventsSchema(festivals),
+  buildBreadcrumbSchema(),
+  buildHowToSchema(),
+];
+---
+
+<BaseLayout
+  title="China Festivals 2026: Dates, Calendar & Where to Go"
+  description="Plan a trip around China's festivals: 2026 dates, a festival finder, best cities, foods, and tips for Spring Festival, Mid-Autumn & more."
+  schemas={schemas}
+>
+  <Nav />
+  <main>
+    <Hero />
+    <TrustBar />
+    <QuickAnswer />
+    <FestivalFinder />
+    <FestivalCalendar />
+    <AtAGlance />
+    <CategoryMatrix />
+    <FestivalCards />
+    <CityMapping />
+    <Itineraries />
+    <FestivalCombos />
+    <ComparisonGuide />
+    <Greetings />
+    <TravelTips />
+    <PackingList />
+    <BudgetGuide />
+    <VisaInfo />
+    <WhyTrust />
+    <Faq />
+    <Privacy />
+  </main>
+  <Footer />
+</BaseLayout>

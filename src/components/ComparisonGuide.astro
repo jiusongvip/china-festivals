@@ -1,0 +1,80 @@
+---
+const decisions = [
+  { if: "You like crowds and fireworks", go: "Spring Festival", month: "February", slug: "spring-festival" },
+  { if: "You like spectacle and real cold", go: "Harbin Ice Festival", month: "January", slug: "harbin-ice-festival" },
+  { if: "You like water and sunshine", go: "Water Splashing Festival", month: "April", slug: "water-splashing-festival" },
+  { if: "You like fire and mountains", go: "Torch Festival", month: "August", slug: "torch-festival" },
+  { if: "You like quiet ritual", go: "Shoton Festival", month: "August", slug: "shoton-festival" },
+  { if: "You like mooncakes and a full moon", go: "Mid-Autumn", month: "September", slug: "mid-autumn-festival" },
+];
+
+const comparison = [
+  { name: "Spring Festival", month: "Feb", crowd: "Very crowded", food: "Dumplings, niangao", best: "Spectacle and family energy" },
+  { name: "Mid-Autumn", month: "Sep", crowd: "Moderate", food: "Mooncakes, pomelo", best: "Balance of food and calm" },
+  { name: "Water Splashing", month: "Apr", crowd: "Very crowded", food: "Dai pineapple rice", best: "Pure fun in warm weather" },
+];
+---
+
+<section class="border-t border-hairline bg-paper-deep/40">
+  <div class="container-px section-pad">
+    <div class="grid gap-10 lg:grid-cols-2">
+      <div>
+        <h2 class="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+          If you like this, go to that
+        </h2>
+        <p class="mt-3 text-ink-soft leading-relaxed">
+          A shortcut for people who know what they enjoy but not what it is called in
+          China.
+        </p>
+        <ul class="mt-8 divide-y divide-hairline">
+          {decisions.map((d) => (
+            <li class="flex items-baseline justify-between gap-4 py-3.5">
+              <span class="text-ink">{d.if}</span>
+              <a
+                href={`#${d.slug}`}
+                class="shrink-0 text-right font-display text-lg font-semibold text-vermilion hover:underline"
+              >
+                {d.go}
+                <span class="ml-1 text-sm font-normal text-ink-soft">{d.month}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+          The big three, side by side
+        </h2>
+        <p class="mt-3 text-ink-soft leading-relaxed">
+          If you are choosing between China's three most famous festivals, here is the
+          honest comparison.
+        </p>
+        <div class="mt-8 overflow-hidden rounded-field border border-hairline bg-white/60">
+          {comparison.map((c, i) => (
+            <div class:list={["grid grid-cols-3 gap-3 px-5 py-4", i !== 0 && "border-t border-hairline"]}>
+              <div>
+                <p class="font-display text-lg font-semibold leading-tight text-ink">{c.name}</p>
+                <p class="text-sm text-ink-soft">{c.month}</p>
+              </div>
+              <div class="col-span-2 grid grid-cols-2 gap-3 text-sm">
+                <div>
+                  <p class="text-xs uppercase tracking-[0.1em] text-ink-soft">Crowds</p>
+                  <p class="mt-0.5 text-ink">{c.crowd}</p>
+                </div>
+                <div>
+                  <p class="text-xs uppercase tracking-[0.1em] text-ink-soft">Eat</p>
+                  <p class="mt-0.5 text-ink">{c.food}</p>
+                </div>
+                <div class="col-span-2">
+                  <p class="text-xs uppercase tracking-[0.1em] text-ink-soft">Best for</p>
+                  <p class="mt-0.5 text-ink">{c.best}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

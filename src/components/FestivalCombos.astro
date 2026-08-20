@@ -1,0 +1,85 @@
+---
+const combos = [
+  {
+    tagline: "Two festivals, one trip",
+    title: "Mid-Autumn + Golden Week",
+    when: "Late September to early October",
+    days: "10 days",
+    route: "Guilin → Beijing",
+    why: "Catch the Mid-Autumn full moon over the Li River karst, then ride high-speed rail north for the National Day flag-raising. The two holidays sit about a week apart, so one trip spans both.",
+    festivals: [
+      { name: "Mid-Autumn Festival", slug: "mid-autumn-festival" },
+      { name: "National Day", slug: "national-day" },
+    ],
+  },
+  {
+    tagline: "Two ethnic new years in one April",
+    title: "Water Splashing + San Yue San",
+    when: "Mid-April",
+    days: "7 days",
+    route: "Xishuangbanna → Nanning",
+    why: "Get soaked at the Dai Water Splashing Festival, then fly east for the Zhuang song festival in Guangxi. Two of China's liveliest minority celebrations, days apart in the same month.",
+    festivals: [
+      { name: "Water Splashing Festival", slug: "water-splashing-festival" },
+      { name: "San Yue San", slug: "san-yue-san" },
+    ],
+  },
+  {
+    tagline: "The winter double-header",
+    title: "Harbin Ice + Spring Festival",
+    when: "January to February",
+    days: "8 days",
+    route: "Harbin → Beijing",
+    why: "Start with the world's biggest ice festival in Harbin, then ride south for Lunar New Year temple fairs in Beijing. One cold, red, glowing trip through China's winter.",
+    festivals: [
+      { name: "Harbin Ice & Snow Festival", slug: "harbin-ice-festival" },
+      { name: "Spring Festival", slug: "spring-festival" },
+    ],
+  },
+];
+---
+
+<section id="combos" class="border-t border-hairline">
+  <div class="container-px section-pad">
+    <div class="max-w-[60ch]">
+      <h2 class="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        Combine two festivals in one trip
+      </h2>
+      <p class="mt-3 text-ink-soft leading-relaxed">
+        Some festivals sit close together on the calendar. These pairings let one trip
+        catch two.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-4 lg:grid-cols-3">
+      {combos.map((c) => (
+        <div class="flex flex-col rounded-field border border-hairline bg-white/60 p-6">
+          <p class="text-xs font-semibold uppercase tracking-[0.12em] text-vermilion">
+            {c.tagline}
+          </p>
+          <p class="mt-2 font-display text-2xl font-semibold leading-tight text-ink">
+            {c.title}
+          </p>
+          <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-ink-soft">
+            <span>{c.when}</span>
+            <span class="font-medium text-vermilion">{c.days}</span>
+          </div>
+          <div class="mt-3 rounded-field border border-hairline bg-paper px-4 py-2.5 text-sm font-medium text-ink">
+            {c.route}
+          </div>
+          <p class="mt-3 text-sm leading-relaxed text-ink-soft">{c.why}</p>
+          <div class="mt-4 flex flex-wrap gap-2 border-t border-hairline pt-4">
+            {c.festivals.map((f) => (
+              <a
+                href={`#${f.slug}`}
+                class="rounded-full border border-hairline bg-paper px-3 py-1.5 text-xs font-medium text-ink transition-colors hover:border-vermilion hover:text-vermilion"
+              >
+                {f.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

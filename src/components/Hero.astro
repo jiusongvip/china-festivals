@@ -1,0 +1,87 @@
+---
+const upcoming = [
+  { name: "Mid-Autumn Festival", date: "2026-09-25", label: "Sep 25, 2026" },
+  { name: "National Day (Golden Week)", date: "2026-10-01", label: "Oct 1, 2026" },
+  { name: "Double Ninth Festival", date: "2026-10-18", label: "Oct 18, 2026" },
+  { name: "Spring Festival", date: "2027-02-06", label: "Feb 6, 2027" },
+];
+const next = upcoming[0];
+---
+
+<section class="relative overflow-hidden">
+  <div class="container-px grid items-center gap-10 py-16 sm:py-20 lg:grid-cols-12 lg:py-24">
+    <!-- left: copy -->
+    <div class="lg:col-span-7">
+      <h1 class="font-display text-5xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-7xl">
+        China Festivals:
+        <span class="text-vermilion">22 celebrations</span>
+        worth a trip
+      </h1>
+      <p class="mt-6 max-w-[54ch] text-lg leading-relaxed text-ink-soft">
+        Only one trip? Go in September for Mid-Autumn. Prefer a party? April's Water
+        Splashing. Want spectacle? Harbin's ice.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <a href="#finder" class="btn-primary">Find my festival</a>
+        <a href="#calendar" class="btn-ghost">View 2026 calendar</a>
+      </div>
+      <div class="mt-6 inline-flex flex-wrap items-center gap-2 rounded-full border border-hairline bg-paper px-4 py-2 text-sm text-ink-soft">
+        <span class="relative flex h-2 w-2">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-vermilion opacity-75"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-vermilion"></span>
+        </span>
+        <span>Next festival: <strong id="next-festival-name" class="font-semibold text-ink">{next.name}</strong> · <span id="next-festival-date">{next.label}</span></span>
+        <span id="countdown" class="font-medium text-vermilion"></span>
+      </div>
+    </div>
+
+    <!-- right: asset -->
+    <div class="relative lg:col-span-5">
+      <div class="relative aspect-[4/5] overflow-hidden rounded-field">
+        <img
+          src="/images/china-festival-hero.webp"
+          alt="Red lanterns glowing at a Chinese festival night market"
+          class="h-full w-full object-cover"
+          width="900"
+          height="1200"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="absolute -bottom-5 -left-5 hidden rounded-field border border-hairline bg-paper px-5 py-4 shadow-sm sm:block">
+        <p class="font-display text-3xl font-semibold leading-none text-vermilion">22</p>
+        <p class="mt-1 text-xs font-medium text-ink-soft">festivals, 4 categories</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const upcoming: { name: string; date: string }[] = [
+    { name: "Mid-Autumn Festival", date: "2026-09-25" },
+    { name: "National Day (Golden Week)", date: "2026-10-01" },
+    { name: "Double Ninth Festival", date: "2026-10-18" },
+    { name: "Spring Festival", date: "2027-02-06" },
+  ];
+
+  const formatDate = (iso: string): string =>
+    new Date(iso + "T00:00:00").toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+
+  const nowMs: number = Date.now();
+  const nextUp = upcoming.find((u) => Date.parse(u.date) >= nowMs);
+  if (nextUp) {
+    const nameEl = document.getElementById("next-festival-name");
+    const dateEl = document.getElementById("next-festival-date");
+    const cdEl = document.getElementById("countdown");
+    if (nameEl) nameEl.textContent = nextUp.name;
+    if (dateEl) dateEl.textContent = formatDate(nextUp.date);
+    if (cdEl) {
+      const days: number = Math.ceil((Date.parse(nextUp.date) - nowMs) / 86400000);
+      cdEl.textContent = days <= 0 ? "· today" : `· in ${days} days`;
+    }
+  }
+</script>
