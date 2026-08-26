@@ -22,4 +22,4 @@ yarn-error.log*
 .idea/
 
 # raw image sources (only optimized webp assets go into the repo)
-public/images-raw/
+images-raw/

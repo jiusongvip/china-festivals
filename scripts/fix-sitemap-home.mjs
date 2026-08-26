@@ -3,7 +3,7 @@ import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const dist = fileURLToPath(new URL("../dist", import.meta.url));
-const home = "https://www.china-festivals.com";
+const home = "https://www.festivals-china.com";
 
 if (!existsSync(dist)) {
   console.log("[fix-sitemap-home] dist/ not found, skipping");
