@@ -151,7 +151,7 @@ export function buildWebSiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "China Festivals",
-    url: "https://www.china-festivals.com/",
+    url: "https://www.festivals-china.com/",
     description:
       "A decision guide to China's festivals, with dates, a festival finder, and city-by-city advice for travelers.",
   };
@@ -172,11 +172,11 @@ export function buildArticleSchema() {
     publisher: {
       "@type": "Organization",
       name: "China Festivals",
-      url: "https://www.china-festivals.com",
+      url: "https://www.festivals-china.com",
     },
     datePublished: "2026-01-05",
     dateModified: "2026-08-21",
-    mainEntityOfPage: "https://www.china-festivals.com/",
+    mainEntityOfPage: "https://www.festivals-china.com/",
   };
 }
 
@@ -185,8 +185,8 @@ export function buildOrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "China Festivals",
-    url: "https://www.china-festivals.com",
-    logo: "https://www.china-festivals.com/favicon.svg",
+    url: "https://www.festivals-china.com",
+    logo: "https://www.festivals-china.com/favicon.svg",
   };
 }
 
@@ -214,7 +214,7 @@ export function buildItemListSchema(festivals: Festival[]) {
       "@type": "ListItem",
       position: i + 1,
       name: f.name,
-      url: `https://www.china-festivals.com/#${f.slug}`,
+      url: `https://www.festivals-china.com/#${f.slug}`,
     })),
   };
 }
@@ -251,7 +251,7 @@ export function buildBreadcrumbSchema() {
         "@type": "ListItem",
         position: 1,
         name: "China Festivals",
-        item: "https://www.china-festivals.com/",
+        item: "https://www.festivals-china.com/",
       },
     ],
   };

@@ -3,7 +3,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: "https://www.china-festivals.com",
+  site: "https://www.festivals-china.com",
   trailingSlash: "always",
   server: { port: 4325 },
   integrations: [sitemap({ lastmod: new Date("2026-08-20") })],

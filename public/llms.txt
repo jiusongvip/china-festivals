@@ -6,13 +6,13 @@ China Festivals helps travellers decide which of China's 22 festivals to experie
 
 ## Key sections
 
-- Festival Finder (choose by traveller type): https://www.china-festivals.com/#finder
-- China festival calendar 2027: https://www.china-festivals.com/#calendar
-- All 22 Chinese festivals, explained: https://www.china-festivals.com/#festivals
-- Where to experience each festival: https://www.china-festivals.com/#cities
-- Travel tips (what to pack, eat, stay, get around): https://www.china-festivals.com/#tips
-- Visa: the short version: https://www.china-festivals.com/#visa
-- FAQ: https://www.china-festivals.com/#faq
+- Festival Finder (choose by traveller type): https://www.festivals-china.com/#finder
+- China festival calendar 2027: https://www.festivals-china.com/#calendar
+- All 22 Chinese festivals, explained: https://www.festivals-china.com/#festivals
+- Where to experience each festival: https://www.festivals-china.com/#cities
+- Travel tips (what to pack, eat, stay, get around): https://www.festivals-china.com/#tips
+- Visa: the short version: https://www.festivals-china.com/#visa
+- FAQ: https://www.festivals-china.com/#faq
 
 ## Key facts
 
