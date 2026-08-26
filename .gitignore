@@ -20,3 +20,6 @@ yarn-error.log*
 # IDE
 .vscode/
 .idea/
+
+# raw image sources (only optimized webp assets go into the repo)
+public/images-raw/
