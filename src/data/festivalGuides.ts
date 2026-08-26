@@ -42,9 +42,9 @@ export interface FestivalGuide {
 export const festivalGuides: FestivalGuide[] = [
   {
     slug: "spring-festival",
-    title: "Spring Festival 2026: Dates, Food & Where to Celebrate Chinese New Year",
+    title: "Spring Festival 2027: Dates, Food & Where to Celebrate Chinese New Year",
     metaDescription:
-      "Chinese New Year 2026 falls on February 17. Dates, reunion dinner foods, temple fairs, best cities, a 5-day itinerary and insider tips.",
+      "Chinese New Year 2027 falls on February 6. Dates, reunion dinner foods, temple fairs, best cities, a 5-day itinerary and insider tips.",
     h1: "Spring Festival: China's New Year, Explained",
     intro:
       "Spring Festival, or Chinese New Year, is the most important date on the Chinese calendar. It triggers the largest annual human migration on earth as hundreds of millions travel home, and it transforms every city into a red-lit celebration of food, fireworks, and family.",
@@ -88,7 +88,7 @@ export const festivalGuides: FestivalGuide[] = [
       "Red envelopes, hongbao, are given to children and unmarried adults as a blessing.",
     ],
     faq: [
-      { q: "When is Chinese New Year in 2026?", a: "February 17, 2026, with the public holiday running roughly February 15 to 23." },
+      { q: "When is Chinese New Year in 2027?", a: "February 6, 2027, with the public holiday running roughly February 5 to 13." },
       { q: "How long does Spring Festival last?", a: "Officially 15 days, from New Year's Eve to the Lantern Festival, though the public holiday is about 8 days." },
       { q: "Should tourists visit during Spring Festival?", a: "Yes for the spectacle and atmosphere, no if you want calm and low prices. It is the busiest and most expensive time of year." },
       { q: "Are restaurants open during Spring Festival?", a: "Many small, family-run restaurants close for the first few days. Hotel restaurants and larger chains usually stay open." },
@@ -97,7 +97,7 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "water-splashing-festival",
-    title: "Water Splashing Festival 2026: Dai New Year in Xishuangbanna",
+    title: "Water Splashing Festival 2027: Dai New Year in Xishuangbanna",
     metaDescription:
       "The Water Splashing Festival (Dai New Year) in April is Yunnan's biggest water fight. Dates, food, where to go, a 3-day plan and survival tips.",
     h1: "Water Splashing Festival: The Dai New Year in Yunnan",
@@ -147,9 +147,9 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "mid-autumn-festival",
-    title: "Mid-Autumn Festival 2026: Mooncakes, Dates & Where to Celebrate",
+    title: "Mid-Autumn Festival 2027: Mooncakes, Dates & Where to Celebrate",
     metaDescription:
-      "Mid-Autumn Festival 2026 falls on September 25. Mooncake guide, the Chang'e legend, best moon-viewing cities, a 3-day itinerary and tips.",
+      "Mid-Autumn Festival 2027 falls on September 15. Mooncake guide, the Chang'e legend, best moon-viewing cities, a 3-day itinerary and tips.",
     h1: "Mid-Autumn Festival: The Moon Festival, Explained",
     intro:
       "The Mid-Autumn Festival, or Moon Festival, falls on the 15th day of the 8th lunar month, when the moon is at its fullest and brightest. Families gather to admire it and share mooncakes, round pastries that symbolise completeness and reunion.",
@@ -187,7 +187,7 @@ export const festivalGuides: FestivalGuide[] = [
       "Mid-Autumn can overlap with National Day Golden Week, so book transport early.",
     ],
     faq: [
-      { q: "When is Mid-Autumn Festival 2026?", a: "September 25, 2026, with the public holiday around September 25 to 27." },
+      { q: "When is Mid-Autumn Festival 2027?", a: "September 15, 2027, with the public holiday around September 15 to 17." },
       { q: "What do you eat at Mid-Autumn?", a: "Mooncakes, pomelo, and seasonal hairy crab, all shared among family." },
       { q: "Is Mid-Autumn a public holiday in China?", a: "Yes, it is a three-day public holiday, one of China's major festivals." },
       { q: "Where is the best place to watch the moon?", a: "Scenic spots like Guilin's Li River, the West Lake, or any high vantage point in a clear city." },
@@ -196,9 +196,9 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "lantern-festival",
-    title: "Lantern Festival 2026: Dates, Tangyuan & China's Best Lantern Displays",
+    title: "Lantern Festival 2027: Dates, Tangyuan & China's Best Lantern Displays",
     metaDescription:
-      "The Lantern Festival on March 3, 2026 ends Chinese New Year. Tangyuan, lantern displays in Zigong and Shanghai, plus a 2-day itinerary and tips.",
+      "The Lantern Festival on February 20, 2027 ends Chinese New Year. Tangyuan, lantern displays in Zigong and Shanghai, plus a 2-day itinerary and tips.",
     h1: "Lantern Festival: The Glowing End of Chinese New Year",
     intro:
       "The Lantern Festival falls on the 15th day of the first lunar month, the first full moon of the new year. It closes out two weeks of Spring Festival celebrations with handcrafted lanterns, riddle games, and tangyuan, the sweet rice balls that symbolise family togetherness.",
@@ -237,7 +237,7 @@ export const festivalGuides: FestivalGuide[] = [
       "Tangyuan are dense and filling, order a small bowl first.",
     ],
     faq: [
-      { q: "When is the Lantern Festival in 2026?", a: "March 3, 2026, the 15th day of the first lunar month." },
+      { q: "When is the Lantern Festival in 2027?", a: "February 20, 2027, the 15th day of the first lunar month." },
       { q: "What do you eat at the Lantern Festival?", a: "Tangyuan, glutinous rice balls with sweet or savoury fillings that symbolise family reunion." },
       { q: "Where are the best lantern displays in China?", a: "Zigong in Sichuan has the world's most famous display, followed by Shanghai's Yuyuan and Xi'an's city wall." },
       { q: "Is the Lantern Festival part of Chinese New Year?", a: "Yes, it is the final day of the 15-day Spring Festival period and marks its official end." },
@@ -246,9 +246,9 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "dragon-boat-festival",
-    title: "Dragon Boat Festival 2026: Dates, Zongzi & Where to Watch the Races",
+    title: "Dragon Boat Festival 2027: Dates, Zongzi & Where to Watch the Races",
     metaDescription:
-      "The Dragon Boat Festival on June 19, 2026 honours the poet Qu Yuan. Zongzi guide, where to watch races, a 2-day plan and practical tips.",
+      "The Dragon Boat Festival on June 9, 2027 honours the poet Qu Yuan. Zongzi guide, where to watch races, a 2-day plan and practical tips.",
     h1: "Dragon Boat Festival: Races, Zongzi, and a Poet's Story",
     intro:
       "The Dragon Boat Festival, or Duanwu, falls on the fifth day of the fifth lunar month. It is a day of dragon boat races, zongzi, and the story of Qu Yuan, the poet whose death the festival commemorates.",
@@ -287,7 +287,7 @@ export const festivalGuides: FestivalGuide[] = [
       "Book riverside hotels early if you want a view of the races from your room.",
     ],
     faq: [
-      { q: "When is the Dragon Boat Festival in 2026?", a: "June 19, 2026, the fifth day of the fifth lunar month." },
+      { q: "When is the Dragon Boat Festival in 2027?", a: "June 9, 2027, the fifth day of the fifth lunar month." },
       { q: "Why do people eat zongzi?", a: "The tradition recalls villagers throwing rice into the river to keep fish away from the poet Qu Yuan's body." },
       { q: "Where can I watch dragon boat races?", a: "Guangzhou's Pearl River, Yueyang's Miluo River, and Hangzhou's West Lake are among the best-known venues." },
       { q: "Is the Dragon Boat Festival a public holiday?", a: "Yes, it is one of China's major festivals, with a three-day public holiday." },
@@ -296,9 +296,9 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "qingming-festival",
-    title: "Qingming Festival 2026: Tomb-Sweeping Day, Qingtuan & Spring Outings",
+    title: "Qingming Festival 2027: Tomb-Sweeping Day, Qingtuan & Spring Outings",
     metaDescription:
-      "Qingming (Tomb-Sweeping Day) falls on April 5, 2026. The Jie Zitui legend, qingtuan green rice balls, where to enjoy spring, and practical tips.",
+      "Qingming (Tomb-Sweeping Day) falls on April 5, 2027. The Jie Zitui legend, qingtuan green rice balls, where to enjoy spring, and practical tips.",
     h1: "Qingming Festival: Tomb-Sweeping Day, Explained",
     intro:
       "Qingming, or Tomb-Sweeping Day, falls in early April, when families honour their ancestors at gravesites and then head out to enjoy the first real warmth of spring. It is a day of quiet remembrance and bright spring outings rolled into one.",
@@ -336,7 +336,7 @@ export const festivalGuides: FestivalGuide[] = [
       "April weather is changeable, bring a light layer and an umbrella.",
     ],
     faq: [
-      { q: "When is Qingming in 2026?", a: "April 5, 2026, with the public holiday around April 4 to 6." },
+      { q: "When is Qingming in 2027?", a: "April 5, 2027, with the public holiday around April 4 to 6." },
       { q: "What is Qingming Festival?", a: "Tomb-Sweeping Day, when families honour ancestors by cleaning graves, then welcome spring with outings and kite flying." },
       { q: "What do you eat at Qingming?", a: "Qingtuan, green rice balls filled with sweet red bean paste, the signature spring treat." },
       { q: "Should tourists visit during Qingming?", a: "Yes for the spring scenery and seasonal food, though avoid the cemeteries themselves, which are for families." },
@@ -345,9 +345,9 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "harbin-ice-festival",
-    title: "Harbin Ice Festival 2026: Dates, Tickets & How to Survive the Cold",
+    title: "Harbin Ice Festival 2027: Dates, Tickets & How to Survive the Cold",
     metaDescription:
-      "The Harbin Ice and Snow Festival runs January to late February 2026. Ice and Snow World, what to eat, what to wear, and a 3-day plan.",
+      "The Harbin Ice and Snow Festival runs January to late February 2027. Ice and Snow World, what to eat, what to wear, and a 3-day plan.",
     h1: "Harbin Ice Festival: A City Built From Ice and Light",
     intro:
       "The Harbin Ice and Snow Festival is the world's largest ice festival. Every winter, Harbin in northeast China turns into a glowing city of illuminated ice and snow sculptures, some the size of buildings, in temperatures that routinely drop below -20°C.",
@@ -387,7 +387,7 @@ export const festivalGuides: FestivalGuide[] = [
       "Book flights and hotels early, Harbin is at peak demand through the festival.",
     ],
     faq: [
-      { q: "When is the Harbin Ice Festival in 2026?", a: "It runs from early January to late February 2026, with the Ice and Snow World open through the season." },
+      { q: "When is the Harbin Ice Festival in 2027?", a: "It runs from early January to late February 2027, with the Ice and Snow World open through the season." },
       { q: "How cold does it get?", a: "Temperatures routinely drop below -20°C, and can reach -30°C at night." },
       { q: "What should I wear?", a: "Thermal layers, insulated boots, a hat, gloves, and a face covering. Rent or buy gear locally if needed." },
       { q: "Is it worth the cold?", a: "Yes, the illuminated ice sculptures are unlike anything else in the world, and are best seen after dark." },
@@ -396,9 +396,9 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "torch-festival",
-    title: "Torch Festival 2026: Yunnan's Fire Festival, Dates & Where to Go",
+    title: "Torch Festival 2027: Yunnan's Fire Festival, Dates & Where to Go",
     metaDescription:
-      "The Yi Torch Festival in August lights up Yunnan and Sichuan. Dates, the meaning of the fire, where to go, food, and a 3-day plan.",
+      "The Yi Torch Festival in late July lights up Yunnan and Sichuan. Dates, the meaning of the fire, where to go, food, and a 3-day plan.",
     h1: "Torch Festival: A Mountain of Fire in Yunnan and Sichuan",
     intro:
       "The Torch Festival is the Yi people's biggest celebration, held in late summer across Yunnan and Sichuan. Villages and towns light enormous torches, and people sing, dance, and parade through the night to drive away bad spirits and pray for a good harvest.",
@@ -437,7 +437,7 @@ export const festivalGuides: FestivalGuide[] = [
       "Highland nights are cool even in August, bring a warm layer.",
     ],
     faq: [
-      { q: "When is the Torch Festival?", a: "It falls on the 24th day of the sixth lunar month, which lands in August, and the exact date shifts each year." },
+      { q: "When is the Torch Festival?", a: "It falls on the 24th day of the sixth lunar month, which lands in late July or August, and the exact date shifts each year." },
       { q: "Who celebrates the Torch Festival?", a: "Primarily the Yi people, with related celebrations among other ethnic groups in Yunnan and Sichuan." },
       { q: "Where is the best place to see it?", a: "Liangshan in Sichuan has the largest celebration, while Dali in Yunnan offers torch night by Erhai Lake." },
       { q: "Is it safe for tourists?", a: "Yes, it is joyful and welcoming, but keep distance from the flames and wear natural fibres." },
@@ -446,9 +446,9 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "qixi-festival",
-    title: "Qixi Festival 2026: China's Valentine's Day, Dates & Where to Celebrate",
+    title: "Qixi Festival 2027: China's Valentine's Day, Dates & Where to Celebrate",
     metaDescription:
-      "Qixi, China's Valentine's Day, falls on August 19, 2026. The cowherd and weaver girl legend, how it is celebrated, food, and romantic cities.",
+      "Qixi, China's Valentine's Day, falls on August 8, 2027. The cowherd and weaver girl legend, how it is celebrated, food, and romantic cities.",
     h1: "Qixi Festival: China's Valentine's Day, Explained",
     intro:
       "Qixi, the Double Seventh, is China's Valentine's Day, falling on the seventh day of the seventh lunar month. It tells the story of two star-crossed lovers who meet once a year, and today it is a quiet, gift-giving day for couples.",
@@ -485,7 +485,7 @@ export const festivalGuides: FestivalGuide[] = [
       "It is a working day in most of China, so transport is normal rather than holiday-busy.",
     ],
     faq: [
-      { q: "When is Qixi in 2026?", a: "August 19, 2026, the seventh day of the seventh lunar month." },
+      { q: "When is Qixi in 2027?", a: "August 8, 2027, the seventh day of the seventh lunar month." },
       { q: "What is the Qixi Festival?", a: "China's Valentine's Day, based on the legend of the cowherd and the weaver girl who meet once a year across the Milky Way." },
       { q: "How do people celebrate Qixi?", a: "Mostly with romantic dinners, gifts, and flowers, rather than public street events." },
       { q: "Is Qixi the same as Western Valentine's Day?", a: "It serves the same romantic role but has its own legend and traditions rooted in the lunar calendar." },
@@ -494,9 +494,9 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "hungry-ghost-festival",
-    title: "Hungry Ghost Festival 2026: The Zhongyuan Festival, Explained",
+    title: "Hungry Ghost Festival 2027: The Zhongyuan Festival, Explained",
     metaDescription:
-      "The Hungry Ghost Festival (Zhongyuan) falls on August 27, 2026. Offerings, floating lanterns, the Mulian legend, and how to observe respectfully.",
+      "The Hungry Ghost Festival (Zhongyuan) falls on August 16, 2027. Offerings, floating lanterns, the Mulian legend, and how to observe respectfully.",
     h1: "Hungry Ghost Festival: When the Spirit World Is Honoured",
     intro:
       "The Hungry Ghost Festival, or Zhongyuan, falls on the fifteenth day of the seventh lunar month. According to tradition, the gates of the underworld open and the spirits of the dead return to the living world for a month, and the living make offerings to appease them.",
@@ -533,7 +533,7 @@ export const festivalGuides: FestivalGuide[] = [
       "Folk custom advises against swimming or staying out very late during the ghost month, take it as local colour rather than a rule.",
     ],
     faq: [
-      { q: "When is the Hungry Ghost Festival in 2026?", a: "August 27, 2026, the fifteenth day of the seventh lunar month." },
+      { q: "When is the Hungry Ghost Festival in 2027?", a: "August 16, 2027, the fifteenth day of the seventh lunar month." },
       { q: "What is the Hungry Ghost Festival?", a: "A Taoist and Buddhist observance when the gates of the underworld are believed to open and offerings are made to wandering spirits." },
       { q: "Where is it best observed?", a: "Hong Kong has the largest public observance, with Guangzhou's river lantern ceremonies close behind." },
       { q: "Is it safe for tourists?", a: "Yes, it is a respectful family observance, just be considerate of people making offerings." },
@@ -542,9 +542,9 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "double-ninth-festival",
-    title: "Double Ninth Festival 2026: Chongyang, Dates & Autumn Hikes",
+    title: "Double Ninth Festival 2027: Chongyang, Dates & Autumn Hikes",
     metaDescription:
-      "The Double Ninth Festival (Chongyang) falls on October 18, 2026. The legend, chrysanthemum wine, mountain climbing, and where to enjoy autumn.",
+      "The Double Ninth Festival (Chongyang) falls on October 8, 2027. The legend, chrysanthemum wine, mountain climbing, and where to enjoy autumn.",
     h1: "Double Ninth Festival: Climb a Mountain and Honour the Elders",
     intro:
       "The Double Ninth Festival, or Chongyang, falls on the ninth day of the ninth lunar month. The double nine is a lucky number in Chinese tradition, and the day is marked by climbing heights, admiring chrysanthemums, and honouring the elderly.",
@@ -580,7 +580,7 @@ export const festivalGuides: FestivalGuide[] = [
       "The festival often falls close to National Day, so check dates and book transport early if they overlap.",
     ],
     faq: [
-      { q: "When is the Double Ninth Festival in 2026?", a: "October 18, 2026, the ninth day of the ninth lunar month." },
+      { q: "When is the Double Ninth Festival in 2027?", a: "October 8, 2027, the ninth day of the ninth lunar month." },
       { q: "What is the Double Ninth Festival?", a: "A day for climbing heights, admiring chrysanthemums, and honouring the elderly." },
       { q: "What do people eat?", a: "Chongyang cake and chrysanthemum wine are the traditional foods." },
       { q: "Is it a public holiday?", a: "It is not a national public holiday, but it is widely observed as a family day." },
@@ -589,9 +589,9 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "laba-festival",
-    title: "Laba Festival 2026: Laba Porridge, Dates & Temple Traditions",
+    title: "Laba Festival 2027: Laba Porridge, Dates & Temple Traditions",
     metaDescription:
-      "The Laba Festival on January 26, 2026 opens the New Year season. Laba porridge, laba garlic, temple porridge lines, and what to expect.",
+      "The Laba Festival on January 15, 2027 opens the New Year season. Laba porridge, laba garlic, temple porridge lines, and what to expect.",
     h1: "Laba Festival: A Warm Bowl That Opens the New Year",
     intro:
       "The Laba Festival falls on the eighth day of the twelfth lunar month, and it opens the countdown to Spring Festival. Its signature is laba porridge, a sweet or savoury porridge of grains, beans, and dried fruit handed out free at temples at dawn.",
@@ -626,7 +626,7 @@ export const festivalGuides: FestivalGuide[] = [
       "It is a working day in most of China, so transport and hotels are normal.",
     ],
     faq: [
-      { q: "When is the Laba Festival in 2026?", a: "January 26, 2026, the eighth day of the twelfth lunar month." },
+      { q: "When is the Laba Festival in 2027?", a: "January 15, 2027, the eighth day of the twelfth lunar month." },
       { q: "What is laba porridge?", a: "A porridge of grains, beans, and dried fruit, served free at temples to mark the festival." },
       { q: "Where can I try it?", a: "Buddhist temples, especially in Beijing, hand out free porridge at dawn." },
       { q: "Is Laba a public holiday?", a: "No, it is a traditional observance that opens the countdown to Spring Festival." },
@@ -635,9 +635,9 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "chinese-new-year-eve",
-    title: "Chinese New Year's Eve 2026: The Reunion Dinner, Explained",
+    title: "Chinese New Year's Eve 2027: The Reunion Dinner, Explained",
     metaDescription:
-      "Chinese New Year's Eve on February 16, 2026 is the year's most important meal. The reunion dinner, midnight dumplings, fireworks, and tips.",
+      "Chinese New Year's Eve on February 5, 2027 is the year's most important meal. The reunion dinner, midnight dumplings, fireworks, and tips.",
     h1: "Chinese New Year's Eve: The Reunion Dinner, Explained",
     intro:
       "New Year's Eve, or Chuxi, is the most important night of the Chinese year. The whole family sits down to the reunion dinner, the year's most significant meal, then stays up late to welcome the new year with fireworks and the Spring Festival Gala.",
@@ -675,7 +675,7 @@ export const festivalGuides: FestivalGuide[] = [
       "The first days of the new year are very quiet, with many shops closed.",
     ],
     faq: [
-      { q: "When is Chinese New Year's Eve in 2026?", a: "February 16, 2026, the last day of the twelfth lunar month." },
+      { q: "When is Chinese New Year's Eve in 2027?", a: "February 5, 2027, the last day of the twelfth lunar month." },
       { q: "What is the reunion dinner?", a: "The most important family meal of the year, when everyone travels home to eat together." },
       { q: "Are restaurants open on New Year's Eve?", a: "Many family restaurants close by evening. Hotel restaurants and larger chains stay open, but book ahead." },
       { q: "What happens at midnight?", a: "Families eat dumplings and welcome the new year with fireworks and the Spring Festival Gala." },
@@ -684,7 +684,7 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "san-yue-san",
-    title: "San Yue San 2026: The Zhuang Song Festival in Guangxi",
+    title: "San Yue San 2027: The Zhuang Song Festival in Guangxi",
     metaDescription:
       "San Yue San, the Zhuang song festival, falls in April in Guangxi. The courtship tradition, five-color rice, singing contests, and where to go.",
     h1: "San Yue San: The Zhuang Song Festival of Guangxi",
@@ -724,7 +724,7 @@ export const festivalGuides: FestivalGuide[] = [
       "Ask before photographing people in traditional dress.",
     ],
     faq: [
-      { q: "When is San Yue San in 2026?", a: "Around April 19, 2026, the third day of the third lunar month." },
+      { q: "When is San Yue San in 2027?", a: "April 9, 2027, the third day of the third lunar month." },
       { q: "What is San Yue San?", a: "The Zhuang people's song festival in Guangxi, a public holiday marked by antiphonal singing and five-color rice." },
       { q: "Where is it celebrated?", a: "Across Guangxi, with the largest events in Nanning and in Zhuang villages around Guilin." },
       { q: "What should I eat?", a: "Five-color glutinous rice, oil tea, and Zhuang-style zongzi." },
@@ -733,7 +733,7 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "sisters-meal-festival",
-    title: "Sisters' Meal Festival 2026: The Miao Courtship Festival in Guizhou",
+    title: "Sisters' Meal Festival 2027: The Miao Courtship Festival in Guizhou",
     metaDescription:
       "The Miao Sisters' Meal Festival in Guizhou celebrates courtship with five-color rice and silver dress. Dates, villages, food, and how to visit.",
     h1: "Sisters' Meal Festival: The Miao Courtship Festival",
@@ -782,7 +782,7 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "naadam-festival",
-    title: "Naadam Festival 2026: Mongolia's Three Games of Men, Explained",
+    title: "Naadam Festival 2027: Mongolia's Three Games of Men, Explained",
     metaDescription:
       "The Naadam Festival in Inner Mongolia features wrestling, archery, and horse racing. Dates, where to go, food, and how to experience it.",
     h1: "Naadam Festival: Wrestling, Archery, and Horse Racing on the Steppe",
@@ -831,7 +831,7 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "shoton-festival",
-    title: "Shoton Festival 2026: Tibet's Yogurt Festival, Dates & the Thangka",
+    title: "Shoton Festival 2027: Tibet's Yogurt Festival, Dates & the Thangka",
     metaDescription:
       "The Shoton Festival in Lhasa unveils a giant thangka at dawn. Dates, the Drepung ceremony, Tibetan opera, yogurt, and how to attend.",
     h1: "Shoton Festival: A Giant Thangka Unveiled at Dawn",
@@ -879,7 +879,7 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "tibetan-new-year",
-    title: "Tibetan New Year 2026: Losar, Dates & How It Is Celebrated",
+    title: "Tibetan New Year 2027: Losar, Dates & How It Is Celebrated",
     metaDescription:
       "Tibetan New Year, or Losar, falls in February. Guthuk soup, monastery rituals, family feasts, and how to experience it in Lhasa.",
     h1: "Tibetan New Year: Losar, Explained",
@@ -918,7 +918,7 @@ export const festivalGuides: FestivalGuide[] = [
       "Many businesses close over Losar, so plan meals and transport ahead.",
     ],
     faq: [
-      { q: "When is Tibetan New Year in 2026?", a: "It falls in February, though the exact date follows the Tibetan calendar and shifts each year." },
+      { q: "When is Tibetan New Year in 2027?", a: "It falls in February, though the exact date follows the Tibetan calendar and shifts each year." },
       { q: "What is guthuk?", a: "A special eve soup of dumplings, some hiding tokens that predict the coming year." },
       { q: "Is Losar the same as Chinese New Year?", a: "No, it follows the Tibetan calendar and often falls close to but distinct from Chinese New Year." },
       { q: "Do I need a permit?", a: "Yes, most visitors to Tibet need a permit arranged through a licensed agency." },
@@ -927,9 +927,9 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "national-day",
-    title: "National Day 2026: Golden Week, Dates & How to Navigate the Crowds",
+    title: "National Day 2027: Golden Week, Dates & How to Navigate the Crowds",
     metaDescription:
-      "China's National Day on October 1, 2026 opens Golden Week, the busiest travel week of the year. What to expect, where to go, and survival tips.",
+      "China's National Day on October 1, 2027 opens Golden Week, the busiest travel week of the year. What to expect, where to go, and survival tips.",
     h1: "National Day: Golden Week, Explained",
     intro:
       "National Day on October 1 marks the founding of the People's Republic of China and opens Golden Week, a seven-day holiday when the entire country travels at once. It is the single busiest travel period of the Chinese year.",
@@ -964,7 +964,7 @@ export const festivalGuides: FestivalGuide[] = [
       "If your dates are flexible, travel the week before or after for the same scenery without the crowds.",
     ],
     faq: [
-      { q: "When is National Day in 2026?", a: "October 1, 2026, opening a seven-day holiday through October 7." },
+      { q: "When is National Day in 2027?", a: "October 1, 2027, opening a seven-day holiday through October 7." },
       { q: "What is Golden Week?", a: "The seven-day National Day holiday, the busiest travel week of the Chinese year." },
       { q: "Should tourists avoid Golden Week?", a: "Most travellers find it too crowded and expensive, but if your dates are fixed, stay in one city and book early." },
       { q: "What is there to see?", a: "The Tiananmen flag-raising, city light shows, and peak autumn scenery." },
@@ -973,9 +973,9 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "labor-day",
-    title: "Labor Day 2026 in China: The Five-Day Spring Holiday, Explained",
+    title: "Labor Day 2027 in China: The Five-Day Spring Holiday, Explained",
     metaDescription:
-      "China's Labor Day holiday on May 1, 2026 is a five-day spring break and the first big travel rush of the year. What to expect and where to go.",
+      "China's Labor Day holiday on May 1, 2027 is a five-day spring break and the first big travel rush of the year. What to expect and where to go.",
     h1: "Labor Day: China's Five-Day Spring Holiday",
     intro:
       "Labor Day on May 1 becomes a five-day holiday in China, sending millions on their first major trips of the year. It is spring's answer to Golden Week, pleasant in weather but busy on the roads and rails.",
@@ -1010,7 +1010,7 @@ export const festivalGuides: FestivalGuide[] = [
       "Coastal cities are cooler than inland ones, bring a light layer.",
     ],
     faq: [
-      { q: "When is Labor Day in China in 2026?", a: "May 1, 2026, extended into a five-day holiday." },
+      { q: "When is Labor Day in China in 2027?", a: "May 1, 2027, extended into a five-day holiday." },
       { q: "Is Labor Day busy for travel?", a: "Yes, it is one of the busiest travel periods of the year, second only to Golden Week." },
       { q: "Where should I go?", a: "Coastal cities like Qingdao and Xiamen are popular for spring weather." },
       { q: "Is it a good time to visit?", a: "The weather is pleasant, but book early and expect crowds at popular spots." },
@@ -1019,7 +1019,7 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "cherry-blossom-season",
-    title: "Cherry Blossom Season 2026 in China: Dates, Wuhan & Wuxi",
+    title: "Cherry Blossom Season 2027 in China: Dates, Wuhan & Wuxi",
     metaDescription:
       "China's cherry blossom season peaks from mid-March to early April. Wuhan University, Wuxi's Yuantouzhu, bloom tracking, and viewing tips.",
     h1: "Cherry Blossom Season: A Pink Week Worth Timing",
@@ -1067,9 +1067,9 @@ export const festivalGuides: FestivalGuide[] = [
   },
   {
     slug: "peony-festival",
-    title: "Luoyang Peony Festival 2026: Dates, Gardens & How to See the Peonies",
+    title: "Luoyang Peony Festival 2027: Dates, Gardens & How to See the Peonies",
     metaDescription:
-      "The Luoyang Peony Festival runs April to early May 2026. Wangcheng Park, the peony's imperial history, Luoyang water banquet, and a 2-day plan.",
+      "The Luoyang Peony Festival runs April to early May 2027. Wangcheng Park, the peony's imperial history, Luoyang water banquet, and a 2-day plan.",
     h1: "Luoyang Peony Festival: A Thousand-Year-Old Flower Show",
     intro:
       "Luoyang has grown peonies for over a thousand years, and each spring its gardens put on a spectacular, month-long display of the flower once reserved for emperors. The city, an ancient capital, turns the bloom into a festival of gardens, food, and Tang-dynasty flair.",
@@ -1104,7 +1104,7 @@ export const festivalGuides: FestivalGuide[] = [
       "Several parks show peonies, so spread your visit to avoid the biggest crowds at Wangcheng.",
     ],
     faq: [
-      { q: "When is the Luoyang Peony Festival in 2026?", a: "It runs from April into early May, with the first two weeks of April as peak bloom." },
+      { q: "When is the Luoyang Peony Festival in 2027?", a: "It runs from April into early May, with the first two weeks of April as peak bloom." },
       { q: "Why is Luoyang famous for peonies?", a: "The city has cultivated the flower for over a thousand years, since the Sui and Tang dynasties." },
       { q: "Where should I see them?", a: "Wangcheng Park is the main venue, with several quieter gardens across the city." },
       { q: "What else is there in Luoyang?", a: "The Longmen Grottoes, a UNESCO site, and the famous Luoyang water banquet." },

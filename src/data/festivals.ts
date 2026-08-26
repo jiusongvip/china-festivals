@@ -1,6 +1,6 @@
 // China Festivals — structured data layer
 // Single source of truth for the single-page SEO site.
-// 2026 Gregorian dates are reference values; lunar dates shift year to year.
+// 2027 Gregorian dates are reference values; lunar dates shift year to year.
 
 export type FestivalCategory = "lunar" | "ethnic" | "modern" | "seasonal";
 export type ExperienceType =
@@ -11,19 +11,34 @@ export type ExperienceType =
   | "romantic"
   | "culture";
 
+export interface Venue {
+  name: string;
+  city: string;
+  zh?: string;
+}
+
+export interface HolidaySchedule {
+  days: string;
+  note?: string;
+  referenceYear: number;
+}
+
 export interface Festival {
   slug: string;
   name: string;
   nameZh: string;
   category: FestivalCategory;
   lunarDate?: string;
-  date2026: string;
+  date2027: string;
   month: number;
   tagline: string;
   significance: string;
   foods: string[];
   highlights: string[];
   bestCities: { name: string; url?: string; note: string }[];
+  image?: string;
+  venues?: Venue[];
+  holiday?: HolidaySchedule;
   tip: string;
   crowd: "low" | "medium" | "high";
   experiences: ExperienceType[];
@@ -73,9 +88,10 @@ export const festivals: Festival[] = [
     slug: "spring-festival",
     name: "Spring Festival",
     nameZh: "春节",
+    image: "/images/spring-festival.webp",
     category: "lunar",
     lunarDate: "1st day of the 1st lunar month",
-    date2026: "Feb 17",
+    date2027: "Feb 6",
     month: 2,
     tagline: "The biggest human migration on earth, wrapped in red.",
     significance:
@@ -91,6 +107,16 @@ export const festivals: Festival[] = [
       { name: "Xi'an", note: "city-wall lantern festival" },
       { name: "Chengdu", note: "lantern shows and hotpot reunions" },
     ],
+    venues: [
+      { name: "Ditan Temple Fair", zh: "地坛庙会", city: "Beijing" },
+      { name: "Longtan Park Temple Fair", zh: "龙潭庙会", city: "Beijing" },
+      { name: "Xi'an City Wall Lantern Festival", zh: "西安城墙灯会", city: "Xi'an" },
+    ],
+    holiday: {
+      days: "9 days (Feb 15–23, 2026)",
+      note: "Resume work Feb 24; make-up work on Feb 14 & Feb 28",
+      referenceYear: 2026,
+    },
     tip: "Trains and flights sell out weeks ahead. Many restaurants close from New Year's Eve to day three. Book dinners in advance.",
     crowd: "high",
     experiences: ["party", "food", "culture"],
@@ -99,9 +125,10 @@ export const festivals: Festival[] = [
     slug: "lantern-festival",
     name: "Lantern Festival",
     nameZh: "元宵节",
+    image: "/images/lantern-festival.webp",
     category: "lunar",
     lunarDate: "15th day of the 1st lunar month",
-    date2026: "Mar 3",
+    date2027: "Feb 20",
     month: 3,
     tagline: "The glowing finale to fifteen days of New Year.",
     significance:
@@ -116,6 +143,11 @@ export const festivals: Festival[] = [
       { name: "Shanghai", note: "Yuyuan Garden lantern fair" },
       { name: "Xi'an", note: "city-wall lantern show" },
     ],
+    venues: [
+      { name: "Yuyuan Garden", zh: "豫园", city: "Shanghai" },
+      { name: "Xi'an City Wall", zh: "西安城墙", city: "Xi'an" },
+      { name: "Zigong Lantern Show", zh: "自贡灯会", city: "Zigong" },
+    ],
     tip: "Yuyuan Garden gets shoulder-to-shoulder after dark. Go at opening or on a weekday.",
     crowd: "medium",
     experiences: ["visual", "food", "culture"],
@@ -124,9 +156,10 @@ export const festivals: Festival[] = [
     slug: "qingming-festival",
     name: "Qingming Festival",
     nameZh: "清明节",
+    image: "/images/qingming-festival.webp",
     category: "lunar",
     lunarDate: "Solar term, early April",
-    date2026: "Apr 5",
+    date2027: "Apr 5",
     month: 4,
     tagline: "Tomb-sweeping and spring outings in one day.",
     significance:
@@ -141,6 +174,15 @@ export const festivals: Festival[] = [
       { name: "Hangzhou", note: "West Lake in full spring bloom" },
       { name: "Suzhou", note: "classical gardens at their greenest" },
     ],
+    venues: [
+      { name: "West Lake", zh: "西湖", city: "Hangzhou" },
+      { name: "Humble Administrator's Garden", zh: "拙政园", city: "Suzhou" },
+    ],
+    holiday: {
+      days: "3 days (Apr 4–6, 2026)",
+      note: "Resume work Apr 7",
+      referenceYear: 2026,
+    },
     tip: "Cemeteries are crowded and emotional. As a visitor, skip the gravesites and enjoy the parks and spring food instead.",
     crowd: "medium",
     experiences: ["food", "culture", "visual"],
@@ -149,9 +191,10 @@ export const festivals: Festival[] = [
     slug: "dragon-boat-festival",
     name: "Dragon Boat Festival",
     nameZh: "端午节",
+    image: "/images/dragon-boat-festival.webp",
     category: "lunar",
     lunarDate: "5th day of the 5th lunar month",
-    date2026: "Jun 19",
+    date2027: "Jun 9",
     month: 6,
     tagline: "Dragon boats, zongzi, and a poet's story.",
     significance:
@@ -166,6 +209,15 @@ export const festivals: Festival[] = [
       { name: "Guangzhou", note: "some of the fastest, most competitive races" },
       { name: "Yueyang", note: "the race tradition tied to Qu Yuan's Miluo River" },
     ],
+    venues: [
+      { name: "Pearl River waterfront", zh: "珠江", city: "Guangzhou" },
+      { name: "Miluo River", zh: "汨罗江", city: "Yueyang" },
+    ],
+    holiday: {
+      days: "3 days (Jun 19–21, 2026)",
+      note: "Resume work Jun 22",
+      referenceYear: 2026,
+    },
     tip: "Riverbanks pack early for the best view. Bring sun protection, races run through midday heat.",
     crowd: "medium",
     experiences: ["party", "food", "culture"],
@@ -174,9 +226,10 @@ export const festivals: Festival[] = [
     slug: "qixi-festival",
     name: "Qixi Festival",
     nameZh: "七夕节",
+    image: "/images/qixi-festival.webp",
     category: "lunar",
     lunarDate: "7th day of the 7th lunar month",
-    date2026: "Aug 19",
+    date2027: "Aug 8",
     month: 8,
     tagline: "China's Valentine's Day, told through star-crossed lovers.",
     significance:
@@ -191,6 +244,10 @@ export const festivals: Festival[] = [
       { name: "Suzhou", note: "canal-side romance in the old town" },
       { name: "Shanghai", note: "skyline dinners for two" },
     ],
+    venues: [
+      { name: "Pingjiang Road", zh: "平江路", city: "Suzhou" },
+      { name: "The Bund", zh: "外滩", city: "Shanghai" },
+    ],
     tip: "It is a couples' day, not a street festival. Book restaurants early, and expect florists to raise prices.",
     crowd: "low",
     experiences: ["romantic", "food"],
@@ -199,9 +256,10 @@ export const festivals: Festival[] = [
     slug: "hungry-ghost-festival",
     name: "Hungry Ghost Festival",
     nameZh: "中元节",
+    image: "/images/hungry-ghost-festival.webp",
     category: "lunar",
     lunarDate: "15th day of the 7th lunar month",
-    date2026: "Aug 27",
+    date2027: "Aug 16",
     month: 8,
     tagline: "A month when the spirit world is said to walk among us.",
     significance:
@@ -216,6 +274,10 @@ export const festivals: Festival[] = [
       { name: "Hong Kong", note: "the largest public observance" },
       { name: "Guangzhou", note: "river lantern ceremonies" },
     ],
+    venues: [
+      { name: "Victoria Harbour waterfront", zh: "维港海滨", city: "Hong Kong" },
+      { name: "Pearl River", zh: "珠江", city: "Guangzhou" },
+    ],
     tip: "Observe respectfully. Avoid photographing people making offerings without asking.",
     crowd: "low",
     experiences: ["ritual", "culture"],
@@ -224,9 +286,10 @@ export const festivals: Festival[] = [
     slug: "mid-autumn-festival",
     name: "Mid-Autumn Festival",
     nameZh: "中秋节",
+    image: "/images/mid-autumn-festival.webp",
     category: "lunar",
     lunarDate: "15th day of the 8th lunar month",
-    date2026: "Sep 25",
+    date2027: "Sep 15",
     month: 9,
     tagline: "Mooncakes and reunion under the year's brightest moon.",
     significance:
@@ -241,6 +304,16 @@ export const festivals: Festival[] = [
       { name: "Beijing", note: "moon over the Summer Palace" },
       { name: "Guilin", note: "moon over the Li River karst" },
     ],
+    venues: [
+      { name: "Summer Palace", zh: "颐和园", city: "Beijing" },
+      { name: "Three Pools Mirroring the Moon", zh: "三潭印月", city: "Hangzhou" },
+      { name: "Li River", zh: "漓江", city: "Guilin" },
+    ],
+    holiday: {
+      days: "3 days (Sep 25–27, 2026)",
+      note: "Resume work Sep 28",
+      referenceYear: 2026,
+    },
     tip: "Mooncakes are dense and heavily sweet, buy a small box first. Hotels and scenic spots fill up for moon-viewing night.",
     crowd: "medium",
     experiences: ["food", "visual", "culture"],
@@ -249,9 +322,10 @@ export const festivals: Festival[] = [
     slug: "double-ninth-festival",
     name: "Double Ninth Festival",
     nameZh: "重阳节",
+    image: "/images/double-ninth-festival.webp",
     category: "lunar",
     lunarDate: "9th day of the 9th lunar month",
-    date2026: "Oct 18",
+    date2027: "Oct 8",
     month: 10,
     tagline: "Climb a mountain and honor your elders.",
     significance:
@@ -266,6 +340,10 @@ export const festivals: Festival[] = [
       { name: "Hangzhou", note: "chrysanthemum displays and West Lake hills" },
       { name: "Beijing", note: "autumn hikes on Fragrant Hills" },
     ],
+    venues: [
+      { name: "Fragrant Hills Park", zh: "香山公园", city: "Beijing" },
+      { name: "West Lake hills", zh: "西湖群山", city: "Hangzhou" },
+    ],
     tip: "A quieter festival, mostly family-focused. Perfect if you want autumn scenery without the crowds of Golden Week.",
     crowd: "low",
     experiences: ["culture", "visual"],
@@ -274,9 +352,10 @@ export const festivals: Festival[] = [
     slug: "laba-festival",
     name: "Laba Festival",
     nameZh: "腊八节",
+    image: "/images/laba-festival.webp",
     category: "lunar",
     lunarDate: "8th day of the 12th lunar month",
-    date2026: "Jan 26",
+    date2027: "Jan 15",
     month: 1,
     tagline: "A warm bowl of porridge that opens the New Year season.",
     significance:
@@ -290,6 +369,10 @@ export const festivals: Festival[] = [
     bestCities: [
       { name: "Beijing", note: "temples like Yonghegong serve porridge" },
     ],
+    venues: [
+      { name: "Yonghegong Lama Temple", zh: "雍和宫", city: "Beijing" },
+      { name: "Guangji Temple", zh: "广济寺", city: "Beijing" },
+    ],
     tip: "Temple porridge lines form before sunrise. It is a local ritual, not a tourist show, so keep it brief and respectful.",
     crowd: "medium",
     experiences: ["food", "ritual"],
@@ -298,9 +381,10 @@ export const festivals: Festival[] = [
     slug: "chinese-new-year-eve",
     name: "Chinese New Year's Eve",
     nameZh: "除夕",
+    image: "/images/chinese-new-year-eve.webp",
     category: "lunar",
     lunarDate: "Last day of the 12th lunar month",
-    date2026: "Feb 16",
+    date2027: "Feb 5",
     month: 2,
     tagline: "The reunion dinner that anchors the entire year.",
     significance:
@@ -315,6 +399,15 @@ export const festivals: Festival[] = [
       { name: "Beijing", note: "city-wide fireworks after midnight" },
       { name: "Shanghai", note: "Bund countdown atmosphere" },
     ],
+    venues: [
+      { name: "The Bund", zh: "外滩", city: "Shanghai" },
+      { name: "Chunxi Road", zh: "春熙路", city: "Chengdu" },
+    ],
+    holiday: {
+      days: "Part of the 9-day Spring Festival break (2026)",
+      note: "Eve falls on Feb 16, 2026",
+      referenceYear: 2026,
+    },
     tip: "Most restaurants close by early evening for private family dinners. Book a hotel dinner well ahead, or plan to eat before 6pm.",
     crowd: "high",
     experiences: ["food", "party"],
@@ -327,7 +420,7 @@ export const festivals: Festival[] = [
     nameZh: "泼水节",
     category: "ethnic",
     lunarDate: "Dai New Year, mid-April",
-    date2026: "Apr 13-15",
+    date2027: "Apr 13-15",
     month: 4,
     tagline: "The Dai New Year, celebrated by soaking everyone in sight.",
     significance:
@@ -342,6 +435,11 @@ export const festivals: Festival[] = [
       { name: "Xishuangbanna", url: "https://www.yunnan-province.com/", note: "the heart of the festival" },
       { name: "Mangshi (Dehong)", note: "a smaller, more local version" },
     ],
+    venues: [
+      { name: "Manting Park", zh: "曼听公园", city: "Jinghong" },
+      { name: "Dai Minority Park, Ganlanba", zh: "橄榄坝傣族园", city: "Jinghong" },
+      { name: "Lancang River waterfront", zh: "澜沧江畔", city: "Jinghong" },
+    ],
     tip: "Waterproof everything. Phone pouches and dry bags are essential, and dress in quick-dry clothes you do not mind soaking.",
     crowd: "high",
     experiences: ["party", "culture", "visual"],
@@ -350,9 +448,10 @@ export const festivals: Festival[] = [
     slug: "torch-festival",
     name: "Torch Festival",
     nameZh: "火把节",
+    image: "/images/torch-festival.webp",
     category: "ethnic",
     lunarDate: "24th day of the 6th lunar month",
-    date2026: "Aug 5 (approx)",
+    date2027: "Jul 27 (approx)",
     month: 8,
     tagline: "A mountain of fire under the stars of Yunnan and Sichuan.",
     significance:
@@ -367,6 +466,11 @@ export const festivals: Festival[] = [
       { name: "Liangshan (Sichuan)", note: "the largest Yi celebration" },
       { name: "Dali (Yunnan)", url: "https://www.yunnan-province.com/", note: "torch night by Erhai Lake" },
     ],
+    venues: [
+      { name: "Torch Square", zh: "火把广场", city: "Xichang" },
+      { name: "Yi People Ancient Town", zh: "彝人古镇", city: "Chuxiong" },
+      { name: "Dali Ancient City", zh: "大理古城", city: "Dali" },
+    ],
     tip: "Watch the big torch from the edges, the crowd surges. Wear natural fibres and keep distance from the flames.",
     crowd: "high",
     experiences: ["visual", "party", "culture"],
@@ -377,7 +481,7 @@ export const festivals: Festival[] = [
     nameZh: "三月三",
     category: "ethnic",
     lunarDate: "3rd day of the 3rd lunar month",
-    date2026: "Apr 19 (approx)",
+    date2027: "Apr 9",
     month: 4,
     tagline: "Guangxi's Zhuang song festival, the original courtship app.",
     significance:
@@ -392,6 +496,14 @@ export const festivals: Festival[] = [
       { name: "Nanning", url: "https://www.guangxi-province.com/", note: "the festival's urban heart" },
       { name: "Guilin", note: "Zhuang villages in the surrounding hills" },
     ],
+    venues: [
+      { name: "Two Rivers and Four Lakes", zh: "两江四湖", city: "Guilin" },
+      { name: "Longji Rice Terraces", zh: "龙脊梯田", city: "Longsheng" },
+    ],
+    holiday: {
+      days: "Public holiday in Guangxi (usually 2–3 days)",
+      referenceYear: 2026,
+    },
     tip: "It is a public holiday in Guangxi, so transport and hotels fill up. Book the Liuzhou-Nanning corridor early.",
     crowd: "medium",
     experiences: ["culture", "food", "visual"],
@@ -400,9 +512,10 @@ export const festivals: Festival[] = [
     slug: "sisters-meal-festival",
     name: "Sisters' Meal Festival",
     nameZh: "姊妹节",
+    image: "/images/sisters-meal-festival.webp",
     category: "ethnic",
     lunarDate: "15th day of the 3rd lunar month",
-    date2026: "May 1 (approx)",
+    date2027: "Apr 21 (approx)",
     month: 5,
     tagline: "The Miao Valentine's Day, wrapped in dyed sticky rice.",
     significance:
@@ -417,6 +530,10 @@ export const festivals: Festival[] = [
       { name: "Kaili (Guizhou)", note: "gateway to the Miao villages" },
       { name: "Taijiang", note: "the festival's traditional home" },
     ],
+    venues: [
+      { name: "Shidong Town", zh: "施洞镇", city: "Taijiang" },
+      { name: "Xijiang Qianhu Miao Village", zh: "西江千户苗寨", city: "Leishan" },
+    ],
     tip: "Villages are remote. Hire a local driver from Kaili, and ask before photographing people in ceremonial dress.",
     crowd: "medium",
     experiences: ["visual", "culture", "food"],
@@ -425,9 +542,10 @@ export const festivals: Festival[] = [
     slug: "naadam-festival",
     name: "Naadam Festival",
     nameZh: "那达慕",
+    image: "/images/naadam-festival.webp",
     category: "ethnic",
     lunarDate: "Mid-summer on the grasslands",
-    date2026: "Jul (variable)",
+    date2027: "mid-Jul (variable)",
     month: 7,
     tagline: "Wrestling, archery, and horse racing on the open steppe.",
     significance:
@@ -442,6 +560,10 @@ export const festivals: Festival[] = [
       { name: "Hohhot", note: "the main urban Naadam" },
       { name: "Hulunbuir", note: "grassland Naadam at its most authentic" },
     ],
+    venues: [
+      { name: "Xilingol Grassland", zh: "锡林郭勒草原", city: "Xilinhot" },
+      { name: "Hulunbuir Grassland", zh: "呼伦贝尔草原", city: "Hulunbuir" },
+    ],
     tip: "Dates shift year to year, confirm locally before flying. Grassland nights are cold even in July, pack layers.",
     crowd: "medium",
     experiences: ["culture", "visual", "party"],
@@ -452,7 +574,7 @@ export const festivals: Festival[] = [
     nameZh: "雪顿节",
     category: "ethnic",
     lunarDate: "Late 6th to early 7th Tibetan month",
-    date2026: "Aug (variable)",
+    date2027: "mid-Aug (variable)",
     month: 8,
     tagline: "A giant thangka unrolled at dawn over Lhasa.",
     significance:
@@ -466,6 +588,10 @@ export const festivals: Festival[] = [
     bestCities: [
       { name: "Lhasa", url: "https://www.tibet-lhasa-potala.com/", note: "the festival's home" },
     ],
+    venues: [
+      { name: "Drepung Monastery", zh: "哲蚌寺", city: "Lhasa" },
+      { name: "Norbulingka", zh: "罗布林卡", city: "Lhasa" },
+    ],
     tip: "Tibet travel requires permits arranged through an agency. The thangka viewing starts before sunrise, arrive early and dress warmly.",
     crowd: "high",
     experiences: ["ritual", "visual", "culture"],
@@ -474,9 +600,10 @@ export const festivals: Festival[] = [
     slug: "tibetan-new-year",
     name: "Tibetan New Year",
     nameZh: "藏历新年",
+    image: "/images/tibetan-new-year.webp",
     category: "ethnic",
     lunarDate: "1st day of the 1st Tibetan month",
-    date2026: "Feb (variable)",
+    date2027: "Feb (variable)",
     month: 2,
     tagline: "Losar, a New Year all its own on the plateau.",
     significance:
@@ -490,6 +617,10 @@ export const festivals: Festival[] = [
     bestCities: [
       { name: "Lhasa", url: "https://www.tibet-lhasa-potala.com/", note: "monastery rituals and family feasts" },
     ],
+    venues: [
+      { name: "Jokhang Temple", zh: "大昭寺", city: "Lhasa" },
+      { name: "Potala Palace square", zh: "布达拉宫广场", city: "Lhasa" },
+    ],
     tip: "Permits and cold weather make this an advanced trip. Plan through a licensed agency and allow acclimatisation days.",
     crowd: "medium",
     experiences: ["ritual", "culture", "food"],
@@ -500,8 +631,9 @@ export const festivals: Festival[] = [
     slug: "harbin-ice-festival",
     name: "Harbin Ice & Snow Festival",
     nameZh: "哈尔滨冰雪节",
+    image: "/images/harbin-ice-festival.webp",
     category: "modern",
-    date2026: "Jan 5 - late Feb",
+    date2027: "Jan 5 - late Feb",
     month: 1,
     tagline: "A city-sized castle built from ice and light.",
     significance:
@@ -515,6 +647,11 @@ export const festivals: Festival[] = [
     bestCities: [
       { name: "Harbin", note: "the festival's home, fly direct or via Beijing" },
     ],
+    venues: [
+      { name: "Harbin Ice and Snow World", zh: "哈尔滨冰雪大世界", city: "Harbin" },
+      { name: "Sun Island Snow Sculpture Expo", zh: "太阳岛雪博会", city: "Harbin" },
+      { name: "Zhaolin Park Ice Lantern Fair", zh: "兆麟公园冰灯游园会", city: "Harbin" },
+    ],
     tip: "Dress for -20°C or colder. Rent proper boots and layer up, and warm up indoors every hour.",
     crowd: "high",
     experiences: ["visual", "party"],
@@ -523,8 +660,9 @@ export const festivals: Festival[] = [
     slug: "national-day",
     name: "National Day",
     nameZh: "国庆节",
+    image: "/images/national-day.webp",
     category: "modern",
-    date2026: "Oct 1",
+    date2027: "Oct 1",
     month: 10,
     tagline: "Golden Week, when the whole country travels at once.",
     significance:
@@ -538,6 +676,14 @@ export const festivals: Festival[] = [
     bestCities: [
       { name: "Beijing", note: "the flag-raising and Tiananmen" },
     ],
+    venues: [
+      { name: "Tiananmen Square", zh: "天安门广场", city: "Beijing" },
+    ],
+    holiday: {
+      days: "7 days (Oct 1–7, 2026)",
+      note: "Resume work Oct 8; make-up work on Sep 20 & Oct 10",
+      referenceYear: 2026,
+    },
     tip: "This is the single worst week of the year for crowds and prices. If you visit, stay in one city and book everything far in advance.",
     crowd: "high",
     experiences: ["party", "culture"],
@@ -546,8 +692,9 @@ export const festivals: Festival[] = [
     slug: "labor-day",
     name: "Labor Day",
     nameZh: "劳动节",
+    image: "/images/labor-day.webp",
     category: "modern",
-    date2026: "May 1",
+    date2027: "May 1",
     month: 5,
     tagline: "A five-day spring break, and the first big travel rush of the year.",
     significance:
@@ -561,6 +708,15 @@ export const festivals: Festival[] = [
     bestCities: [
       { name: "Qingdao", note: "coastal spring before the summer crowds" },
     ],
+    venues: [
+      { name: "Zhanqiao Pier", zh: "栈桥", city: "Qingdao" },
+      { name: "May Fourth Square", zh: "五四广场", city: "Qingdao" },
+    ],
+    holiday: {
+      days: "5 days (May 1–5, 2026)",
+      note: "Resume work May 6; make-up work on May 9",
+      referenceYear: 2026,
+    },
     tip: "Expect full trains and premium hotel rates. Travel mid-week within the holiday window when possible.",
     crowd: "high",
     experiences: ["culture", "visual"],
@@ -571,8 +727,9 @@ export const festivals: Festival[] = [
     slug: "cherry-blossom-season",
     name: "Cherry Blossom Season",
     nameZh: "赏樱季",
+    image: "/images/cherry-blossom-season.webp",
     category: "seasonal",
-    date2026: "mid-Mar - early Apr",
+    date2027: "mid-Mar - early Apr",
     month: 3,
     tagline: "A pink, week-long window that draws photographers from everywhere.",
     significance:
@@ -587,6 +744,11 @@ export const festivals: Festival[] = [
       { name: "Wuhan", note: "the university campus and East Lake" },
       { name: "Wuxi", note: "Yuantouzhu by Taihu Lake" },
     ],
+    venues: [
+      { name: "Wuhan University cherry avenue", zh: "武汉大学樱花大道", city: "Wuhan" },
+      { name: "East Lake Cherry Blossom Garden", zh: "东湖樱园", city: "Wuhan" },
+      { name: "Yuantouzhu Peninsula", zh: "鼋头渚", city: "Wuxi" },
+    ],
     tip: "Bloom dates shift with weather, track forecasts closely. Weekends are packed, visit at opening on a weekday.",
     crowd: "high",
     experiences: ["visual", "romantic"],
@@ -595,8 +757,9 @@ export const festivals: Festival[] = [
     slug: "peony-festival",
     name: "Luoyang Peony Festival",
     nameZh: "洛阳牡丹节",
+    image: "/images/peony-festival.webp",
     category: "seasonal",
-    date2026: "Apr - early May",
+    date2027: "Apr - early May",
     month: 4,
     tagline: "A thousand-year-old flower show in an ancient capital.",
     significance:
@@ -609,6 +772,11 @@ export const festivals: Festival[] = [
     ],
     bestCities: [
       { name: "Luoyang", note: "the festival's home, a short high-speed rail ride from Xi'an" },
+    ],
+    venues: [
+      { name: "Wangcheng Park", zh: "王城公园", city: "Luoyang" },
+      { name: "Luoyang National Peony Garden", zh: "中国国花园", city: "Luoyang" },
+      { name: "Sui-Tang Botanical Garden", zh: "隋唐城遗址植物园", city: "Luoyang" },
     ],
     tip: "The first two weeks of April are peak bloom. Combine it with a Xi'an trip for a two-city history route.",
     crowd: "medium",

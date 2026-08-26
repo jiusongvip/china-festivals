@@ -18,26 +18,31 @@ const MONTHS: Record<string, string> = {
   Dec: "12",
 };
 
-function toISO(date2026: string, month: number): string {
-  const m = date2026.match(/([A-Z][a-z]{2})\s+(\d{1,2})/);
+function toISO(dateStr: string, month: number): string {
+  const m = dateStr.match(/([A-Z][a-z]{2})\s+(\d{1,2})/);
   if (m) {
     const mm = MONTHS[m[1]];
     const dd = m[2].padStart(2, "0");
-    return `2026-${mm}-${dd}`;
+    return `2027-${mm}-${dd}`;
   }
-  return `2026-${String(month).padStart(2, "0")}-01`;
+  // Approximate "mid-Mar"-style values to the 15th of the month.
+  const mid = dateStr.match(/mid-([A-Z][a-z]{2})/);
+  if (mid) {
+    return `2027-${MONTHS[mid[1]]}-15`;
+  }
+  return `2027-${String(month).padStart(2, "0")}-01`;
 }
 
 // Multi-day festivals get an explicit endDate; single-day events end when they start.
 const endDateMap: Record<string, string> = {
-  "spring-festival": "Feb 23",
+  "spring-festival": "Feb 12",
   "water-splashing-festival": "Apr 15",
   "harbin-ice-festival": "Feb 28",
   "national-day": "Oct 7",
   "labor-day": "May 5",
-  "dragon-boat-festival": "Jun 21",
+  "dragon-boat-festival": "Jun 11",
   "qingming-festival": "Apr 6",
-  "mid-autumn-festival": "Sep 27",
+  "mid-autumn-festival": "Sep 17",
   "cherry-blossom-season": "Apr 7",
   "peony-festival": "May 5",
 };
@@ -48,8 +53,8 @@ export const faqItems = [
     a: "The four big ones are Spring Festival (Chinese New Year), Qingming, Dragon Boat Festival, and Mid-Autumn Festival. Beyond those, the Lantern Festival, Qixi, and the ethnic festivals like the Water Splashing Festival and Torch Festival are worth planning a trip around.",
   },
   {
-    q: "When is Chinese New Year in 2026?",
-    a: "Chinese New Year falls on February 17, 2026. The Spring Festival holiday runs roughly February 15 to 23, with New Year's Eve reunions on February 16.",
+    q: "When is Chinese New Year in 2027?",
+    a: "Chinese New Year falls on February 6, 2027. The Spring Festival holiday runs roughly February 5 to 13, with New Year's Eve reunions on February 5.",
   },
   {
     q: "Which Chinese festival should I visit first?",
@@ -133,11 +138,11 @@ export const faqItems = [
   },
   {
     q: "Water Splashing Festival vs Torch Festival: which should I choose?",
-    a: "Both are Yunnan ethnic festivals but suit different travellers. The Water Splashing Festival (April 13-15) is a wet, joyful street party in warm weather; the Torch Festival (August) is fire, dance, and spectacle after dark. Choose Water Splashing for pure fun and heat, Torch for photography and atmosphere.",
+    a: "Both are Yunnan ethnic festivals but suit different travellers. The Water Splashing Festival (April 13-15) is a wet, joyful street party in warm weather; the Torch Festival (late July) is fire, dance, and spectacle after dark. Choose Water Splashing for pure fun and heat, Torch for photography and atmosphere.",
   },
   {
     q: "Lantern Festival vs Mid-Autumn: what is the difference?",
-    a: "Both feature lanterns and a full moon, but they are opposite bookends of the year. The Lantern Festival (March 3, 2026) closes Chinese New Year with the year's biggest lantern displays and riddle games; Mid-Autumn (September 25, 2026) is the Moon Festival, centred on mooncakes and family reunion. Lantern Festival is better for light shows, Mid-Autumn for food and calm.",
+    a: "Both feature lanterns and a full moon, but they are opposite bookends of the year. The Lantern Festival (February 20, 2027) closes Chinese New Year with the year's biggest lantern displays and riddle games; Mid-Autumn (September 15, 2027) is the Moon Festival, centred on mooncakes and family reunion. Lantern Festival is better for light shows, Mid-Autumn for food and calm.",
   },
 ];
 
@@ -156,9 +161,9 @@ export function buildArticleSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "China Festivals 2026: Dates, Calendar & Where to Go",
+    headline: "China Festivals 2027: Dates, Calendar & Where to Go",
     description:
-      "Plan a trip around China's festivals: 2026 dates, a festival finder, best cities, foods, and tips for Spring Festival, Mid-Autumn & more.",
+      "Plan a trip around China's festivals: 2027 dates, a festival finder, best cities, foods, and tips for Spring Festival, Mid-Autumn & more.",
     author: {
       "@type": "Person",
       name: "China Festivals Editorial Team",
@@ -170,7 +175,7 @@ export function buildArticleSchema() {
       url: "https://www.china-festivals.com",
     },
     datePublished: "2026-01-05",
-    dateModified: "2026-08-20",
+    dateModified: "2026-08-21",
     mainEntityOfPage: "https://www.china-festivals.com/",
   };
 }
@@ -221,8 +226,8 @@ export function buildEventsSchema(festivals: Festival[]) {
       "@type": "Event",
       name: f.name,
       description: f.significance,
-      startDate: toISO(f.date2026, f.month),
-      endDate: toISO(endDateMap[f.slug] ?? f.date2026, f.month),
+      startDate: toISO(f.date2027, f.month),
+      endDate: toISO(endDateMap[f.slug] ?? f.date2027, f.month),
       eventStatus: "https://schema.org/EventScheduled",
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
       location: {

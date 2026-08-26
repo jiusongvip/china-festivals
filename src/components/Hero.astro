@@ -4,6 +4,9 @@ const upcoming = [
   { name: "National Day (Golden Week)", date: "2026-10-01", label: "Oct 1, 2026" },
   { name: "Double Ninth Festival", date: "2026-10-18", label: "Oct 18, 2026" },
   { name: "Spring Festival", date: "2027-02-06", label: "Feb 6, 2027" },
+  { name: "Mid-Autumn Festival", date: "2027-09-15", label: "Sep 15, 2027" },
+  { name: "National Day (Golden Week)", date: "2027-10-01", label: "Oct 1, 2027" },
+  { name: "Double Ninth Festival", date: "2027-10-08", label: "Oct 8, 2027" },
 ];
 const next = upcoming[0];
 ---
@@ -23,7 +26,7 @@ const next = upcoming[0];
       </p>
       <div class="mt-8 flex flex-wrap items-center gap-3">
         <a href="#finder" class="btn-primary">Find my festival</a>
-        <a href="#calendar" class="btn-ghost">View 2026 calendar</a>
+        <a href="#calendar" class="btn-ghost">View 2027 calendar</a>
       </div>
       <div class="mt-6 inline-flex flex-wrap items-center gap-2 rounded-full border border-hairline bg-paper px-4 py-2 text-sm text-ink-soft">
         <span class="relative flex h-2 w-2">
@@ -62,6 +65,9 @@ const next = upcoming[0];
     { name: "National Day (Golden Week)", date: "2026-10-01" },
     { name: "Double Ninth Festival", date: "2026-10-18" },
     { name: "Spring Festival", date: "2027-02-06" },
+    { name: "Mid-Autumn Festival", date: "2027-09-15" },
+    { name: "National Day (Golden Week)", date: "2027-10-01" },
+    { name: "Double Ninth Festival", date: "2027-10-08" },
   ];
 
   const formatDate = (iso: string): string =>
