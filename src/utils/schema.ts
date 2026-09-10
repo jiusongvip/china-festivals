@@ -163,7 +163,7 @@ export function buildArticleSchema() {
     "@type": "Article",
     headline: "China Festivals 2027: Dates, Calendar & Where to Go",
     description:
-      "Plan a trip around China's festivals: 2027 dates, a festival finder, best cities, foods, and tips for Spring Festival, Mid-Autumn & more.",
+      "Plan a trip around China's festivals: 2027 dates, a festival finder, the best cities and foods, plus expert tips for Spring Festival, Mid-Autumn, and 20 more.",
     author: {
       "@type": "Person",
       name: "China Festivals Editorial Team",
