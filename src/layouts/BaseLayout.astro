@@ -1,5 +1,8 @@
 ---
 import "../styles/global.css";
+import cormorant600 from "@fontsource/cormorant-garamond/files/cormorant-garamond-latin-600-normal.woff2?url";
+import outfit400 from "@fontsource/outfit/files/outfit-latin-400-normal.woff2?url";
+import outfit500 from "@fontsource/outfit/files/outfit-latin-500-normal.woff2?url";
 
 interface Props {
   title: string;
@@ -15,21 +18,54 @@ const {
   schemas = [],
 } = Astro.props;
 const ogImage = "https://www.festivals-china.com/og.jpg";
+const fontPreloads = [
+  { href: cormorant600, type: "font/woff2" },
+  { href: outfit400, type: "font/woff2" },
+  { href: outfit500, type: "font/woff2" },
+];
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-92D8HDFTQM"></script>
+    <!-- Google tag (gtag.js): deferred until first interaction or idle to keep TBT/LCP clean -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-92D8HDFTQM");
+
+      (function loadAnalytics() {
+        var GA_ID = "G-92D8HDFTQM";
+        var loaded = false;
+        var load = function () {
+          if (loaded) return;
+          loaded = true;
+          var s = document.createElement("script");
+          s.async = true;
+          s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+          document.head.appendChild(s);
+        };
+        var events = ["pointerdown", "keydown", "touchstart", "scroll"];
+        var onFirst = function () {
+          events.forEach(function (e) {
+            window.removeEventListener(e, onFirst, { passive: true });
+          });
+          load();
+        };
+        events.forEach(function (e) {
+          window.addEventListener(e, onFirst, { passive: true, once: true });
+        });
+        if (document.readyState === "complete") {
+          setTimeout(load, 3000);
+        } else {
+          window.addEventListener("load", function () {
+            setTimeout(load, 3000);
+          });
+        }
+      })();
     </script>
 
     <meta charset="utf-8" />
@@ -55,6 +91,10 @@ const ogImage = "https://www.festivals-china.com/og.jpg";
     <meta name="twitter:image" content={ogImage} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    {fontPreloads.map((f) => (
+      <link rel="preload" as="font" type={f.type} href={f.href} crossorigin="anonymous" />
+    ))}
 
     {
       schemas.map((s) => (
