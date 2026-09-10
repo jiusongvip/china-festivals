@@ -41,17 +41,24 @@ const next = upcoming[0];
     <!-- right: asset -->
     <div class="relative lg:col-span-5">
       <div class="relative aspect-[4/5] overflow-hidden rounded-field">
-        <img
-          src="/images/china-festival-hero-660.webp"
-          srcset="/images/china-festival-hero-660.webp 660w, /images/china-festival-hero-1000.webp 1000w, /images/china-festival-hero.webp 1086w"
-          sizes="(min-width: 1024px) 41vw, 90vw"
-          alt="Red lanterns glowing at a Chinese festival night market"
-          class="h-full w-full object-cover"
-          width="660"
-          height="880"
-          loading="eager"
-          fetchpriority="high"
-        />
+        <picture>
+          <source
+            type="image/avif"
+            srcset="/images/china-festival-hero-660.avif 660w, /images/china-festival-hero-1000.avif 1000w, /images/china-festival-hero.avif 1086w"
+            sizes="(min-width: 1024px) 41vw, 90vw"
+          />
+          <img
+            src="/images/china-festival-hero-660.webp"
+            srcset="/images/china-festival-hero-660.webp 660w, /images/china-festival-hero-1000.webp 1000w, /images/china-festival-hero.webp 1086w"
+            sizes="(min-width: 1024px) 41vw, 90vw"
+            alt="Red lanterns glowing at a Chinese festival night market"
+            class="h-full w-full object-cover"
+            width="660"
+            height="880"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </picture>
       </div>
       <div class="absolute -bottom-5 -left-5 hidden rounded-field border border-hairline bg-paper px-5 py-4 shadow-sm sm:block">
         <p class="font-display text-3xl font-semibold leading-none text-vermilion">22</p>
