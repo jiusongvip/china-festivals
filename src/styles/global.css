@@ -59,6 +59,16 @@
     @apply py-16 sm:py-24;
   }
 
+  /* skip style+layout work for off-screen sections on load (perf: FCP/SI) */
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 1600px;
+  }
+
+  .cv-lg {
+    contain-intrinsic-size: auto 6000px;
+  }
+
   /* anchor nav pill */
   .nav-pill {
     @apply inline-flex items-center gap-1.5 rounded-full border border-hairline bg-paper px-3.5 py-1.5 text-sm font-medium text-ink-soft transition-colors duration-200 hover:border-vermilion hover:text-vermilion;
