@@ -4,17 +4,21 @@
 
 China Festivals helps travellers decide which of China's 22 festivals to experience, when to go, and where. It covers lunar festivals (Spring Festival, Mid-Autumn), ethnic festivals (Water Splashing, Torch), modern holidays (Harbin Ice, National Day), and seasonal events (cherry blossoms, Luoyang peonies).
 
-## Key sections
+## Pages
 
-- Festival Finder (choose by traveller type): https://www.festivals-china.com/#finder
-- China festival calendar 2027: https://www.festivals-china.com/#calendar
-- All 22 Chinese festivals, explained: https://www.festivals-china.com/#festivals
-- Where to experience each festival: https://www.festivals-china.com/#cities
-- Travel tips (what to pack, eat, stay, get around): https://www.festivals-china.com/#tips
-- Visa: the short version: https://www.festivals-china.com/#visa
-- FAQ: https://www.festivals-china.com/#faq
-- About this guide (editorial standards and sources): https://www.festivals-china.com/about/
-- Privacy policy and terms of use: https://www.festivals-china.com/#privacy
+- [Home: China Festivals 2027 guide](https://www.festivals-china.com/): 2027 dates, festival finder, all 22 festival guides, city advice, packing lists, visa summary, and FAQ.
+
+## Sections
+
+- [Festival Finder](https://www.festivals-china.com/#finder): choose a festival by traveller type or by month.
+- [China festival calendar 2027](https://www.festivals-china.com/#calendar): Gregorian dates with lunar anchors and 2028 previews.
+- [All 22 Chinese festivals, explained](https://www.festivals-china.com/#festivals): history, food, venues, itineraries, and tips per festival.
+- [Where to experience each festival](https://www.festivals-china.com/#cities): city-by-city festival mapping.
+- [Travel tips](https://www.festivals-china.com/#tips): what to pack, eat, where to stay, and getting around.
+- [Visa: the short version](https://www.festivals-china.com/#visa): 30-day visa-free entry and the 240-hour transit policy.
+- [FAQ](https://www.festivals-china.com/#faq): common questions about dates, crowds, food, and logistics.
+- [About this guide](https://www.festivals-china.com/about/): who writes it, editorial standards, and sources.
+- [Privacy policy and terms of use](https://www.festivals-china.com/#privacy): data handling and site terms.
 
 ## Key facts
 
