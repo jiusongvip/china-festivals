@@ -9,6 +9,7 @@ interface Props {
   description: string;
   canonical?: string;
   schemas?: Record<string, unknown>[];
+  preloadHero?: boolean;
 }
 
 const {
@@ -16,6 +17,7 @@ const {
   description,
   canonical = "https://www.festivals-china.com",
   schemas = [],
+  preloadHero = false,
 } = Astro.props;
 const ogImage = "https://www.festivals-china.com/og.jpg";
 const fontPreloads = [
@@ -70,6 +72,16 @@ const fontPreloads = [
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {preloadHero && (
+      <link
+        rel="preload"
+        as="image"
+        href="/images/china-festival-hero-660.webp"
+        imagesrcset="/images/china-festival-hero-660.webp 660w, /images/china-festival-hero-1000.webp 1000w, /images/china-festival-hero.webp 1086w"
+        imagesizes="(min-width: 1024px) 41vw, 90vw"
+        fetchpriority="high"
+      />
+    )}
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
