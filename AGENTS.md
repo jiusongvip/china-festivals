@@ -6,7 +6,7 @@
 
 ## 项目概况
 
-- Astro 静态单页站（仅 index + 404），纯英文，无 locale/分页。
+- Astro 静态站（index + about + 404），纯英文，无 locale/分页；节日内容保持单页不拆分。
 - 域名：https://www.festivals-china.com（canonical/sitemap 首页不带尾斜杠，内页带）。
 - `npm run build` 末尾自动执行 `node scripts/fix-sitemap-home.mjs`（sitemap 首页去尾斜杠）。
 
