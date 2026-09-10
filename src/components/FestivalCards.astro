@@ -32,9 +32,9 @@ const crowdColor = {
           return (
             <div id={`cat-${cat.key}`} class="scroll-mt-24">
               <div class="mb-5 flex items-baseline gap-3">
-                <h3 class="font-display text-2xl font-semibold tracking-tight text-ink">
+                <h2 class="font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
                   {cat.label}
-                </h3>
+                </h2>
                 <span class="text-sm text-ink-soft">{cat.nameZh}</span>
               </div>
 
@@ -46,9 +46,9 @@ const crowdColor = {
                       <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-5 sm:p-6 [&::-webkit-details-marker]:hidden">
                         <div class="min-w-0">
                           <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
-                            <span class="font-display text-xl font-semibold text-ink group-open:text-vermilion sm:text-2xl">
+                            <h3 class="font-display text-xl font-semibold text-ink group-open:text-vermilion sm:text-2xl">
                               {f.name}
-                            </span>
+                            </h3>
                             <span class="text-sm text-ink-soft">{f.nameZh}</span>
                           </div>
                           <div class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-soft">
@@ -232,9 +232,9 @@ const crowdColor = {
 
                           <div class="mt-6 grid gap-6 sm:grid-cols-2">
                             <div>
-                              <p class="text-xs font-semibold uppercase tracking-[0.12em] text-ink-soft">
+                              <h4 class="text-xs font-semibold uppercase tracking-[0.12em] text-ink-soft">
                                 What you eat
-                              </p>
+                              </h4>
                               <ul class="mt-2 space-y-1.5">
                                 {f.foods.map((food) => (
                                   <li class="flex gap-2 text-sm leading-relaxed text-ink">
@@ -245,9 +245,9 @@ const crowdColor = {
                               </ul>
                             </div>
                             <div>
-                              <p class="text-xs font-semibold uppercase tracking-[0.12em] text-ink-soft">
+                              <h4 class="text-xs font-semibold uppercase tracking-[0.12em] text-ink-soft">
                                 What you see
-                              </p>
+                              </h4>
                               <ul class="mt-2 space-y-1.5">
                                 {f.highlights.map((h) => (
                                   <li class="flex gap-2 text-sm leading-relaxed text-ink">
@@ -260,9 +260,9 @@ const crowdColor = {
                           </div>
 
                           <div class="mt-6">
-                            <p class="text-xs font-semibold uppercase tracking-[0.12em] text-ink-soft">
+                            <h4 class="text-xs font-semibold uppercase tracking-[0.12em] text-ink-soft">
                               Best places to experience it
-                            </p>
+                            </h4>
                             <div class="mt-2 flex flex-wrap gap-2">
                               {f.bestCities.map((c) => (
                                 c.url ? (
@@ -286,9 +286,9 @@ const crowdColor = {
                           </div>
 
                           <div class="mt-6 rounded-field border border-vermilion/20 bg-vermilion-soft px-5 py-4">
-                            <p class="text-xs font-semibold uppercase tracking-[0.12em] text-vermilion-dark">
+                            <h4 class="text-xs font-semibold uppercase tracking-[0.12em] text-vermilion-dark">
                               Watch out for
-                            </p>
+                            </h4>
                             <p class="mt-1 text-sm leading-relaxed text-ink">{f.tip}</p>
                           </div>
                         </div>

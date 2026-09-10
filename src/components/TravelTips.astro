@@ -39,7 +39,7 @@ const pitfalls = [
     <div class="mt-10 grid gap-4 sm:grid-cols-2">
       {essentials.map((e) => (
         <div class="rounded-field border border-hairline bg-white/60 p-6">
-          <p class="font-display text-xl font-semibold text-ink">{e.title}</p>
+          <h3 class="font-display text-xl font-semibold text-ink">{e.title}</h3>
           <p class="mt-2 text-sm leading-relaxed text-ink-soft">{e.body}</p>
         </div>
       ))}
@@ -52,7 +52,7 @@ const pitfalls = [
       <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {pitfalls.map((p) => (
           <div class="rounded-field border border-vermilion/15 bg-vermilion-soft p-6">
-            <p class="font-display text-lg font-semibold text-vermilion-dark">{p.title}</p>
+            <h3 class="font-display text-lg font-semibold text-vermilion-dark">{p.title}</h3>
             <p class="mt-2 text-sm leading-relaxed text-ink">{p.body}</p>
           </div>
         ))}

@@ -187,6 +187,13 @@ export function buildOrganizationSchema() {
     name: "China Festivals",
     url: "https://www.festivals-china.com",
     logo: "https://www.festivals-china.com/favicon.svg",
+    sameAs: [
+      "https://www.yunnan-province.com/",
+      "https://www.guangxi-province.com/",
+      "https://www.tibet-lhasa-potala.com/",
+      "https://www.xi-an-china.com/",
+      "https://www.china-attractions-in-beijing.com/",
+    ],
   };
 }
 
