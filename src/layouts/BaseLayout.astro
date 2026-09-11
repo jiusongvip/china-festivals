@@ -27,6 +27,20 @@ const fontPreloads = [
   { href: outfit500, type: "font/woff2" },
   { href: outfit600, type: "font/woff2" },
 ];
+
+/* font-display: optional + preload = fonts (usually) ready before first paint, zero FOUT/CLS */
+const fontFaces = [
+  { family: "Cormorant Garamond", weight: "600", url: cormorant600 },
+  { family: "Outfit", weight: "400", url: outfit400 },
+  { family: "Outfit", weight: "500", url: outfit500 },
+  { family: "Outfit", weight: "600", url: outfit600 },
+];
+const fontFaceCss = fontFaces
+  .map(
+    (f) =>
+      `@font-face{font-family:'${f.family}';font-style:normal;font-display:optional;font-weight:${f.weight};src:url('${f.url}') format('woff2');}`,
+  )
+  .join("\n");
 ---
 
 <!doctype html>
@@ -63,10 +77,10 @@ const fontPreloads = [
           window.addEventListener(e, onFirst, { passive: true, once: true });
         });
         if (document.readyState === "complete") {
-          setTimeout(load, 3000);
+          setTimeout(load, 6000);
         } else {
           window.addEventListener("load", function () {
-            setTimeout(load, 3000);
+            setTimeout(load, 6000);
           });
         }
       })();
@@ -110,6 +124,7 @@ const fontPreloads = [
     {fontPreloads.map((f) => (
       <link rel="preload" as="font" type={f.type} href={f.href} crossorigin="anonymous" />
     ))}
+    <style is:global set:html={fontFaceCss} />
 
     {
       schemas.map((s) => (
