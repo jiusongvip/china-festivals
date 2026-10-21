@@ -7,7 +7,7 @@ export default defineConfig({
   trailingSlash: "always",
   server: { port: 4325 },
   build: { inlineStylesheets: "always" },
-  integrations: [sitemap({ lastmod: new Date("2026-08-20") })],
+  integrations: [sitemap({ lastmod: new Date("2026-09-10") })],
   vite: {
     plugins: [tailwindcss()],
   },
